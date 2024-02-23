@@ -41,7 +41,7 @@ const Gnb = () => {
 			});
 		});
 
-		btnFold.current.querySelector('button').addEventListener('click', (e)=>{
+		btnFold.current.addEventListener('click', (e)=>{
 			// console.log(e);
 			var classList = btnFold.current.classList;
 			var containerEl = gnbEl.current.nextElementSibling;
