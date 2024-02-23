@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import 'react-calendar/dist/Calendar.css';
-import DatePicker from 'react-date-picker';
+import DatePicker from 'react-datepicker';
 
 const PeriodSett = ({periodOpt, startDate, endDate}) => {
 	let start = startDate.split('-');

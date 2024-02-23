@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import Swiper from 'react-id-swiper';
+import Swiper from 'swiper';
 import PropTypes from 'prop-types';
 
 const TabCmpt = ({children, setIndex, tabName, setViewBox}) => {

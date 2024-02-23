@@ -1,16 +1,21 @@
 import React from "react";
-import Main from 'page/Main';
-import FormItem from 'guide/FormItem';
-import TableItem from 'guide/TableItem';
-import TabItem from 'guide/TabItem';
-import RegTemplate from 'guide/register_box_template';
-import ProductReg from 'page/prdReg/ProductReg';
+
 import {
 	BrowserRouter as BRouter,
 	Routes,
 	Route,
 	Navigate,
 } from 'react-router-dom';
+
+import Main from 'page/Main';
+import FormItem from 'guide/FormItem';
+import TableItem from 'guide/TableItem';
+import TabItem from 'guide/TabItem';
+import RegTemplate from 'guide/register_box_template';
+import ProductReg from 'page/prdReg/ProductReg';
+import Header from 'layout/Header';
+import Gnb from 'layout/Gnb';
+import Footer from 'layout/Footer';
 
 
 const RouterSet = () => {
@@ -21,7 +26,7 @@ const RouterSet = () => {
 			<div id="container">
 
 			<Routes>
-				<Route path="/" element={<Home />} />
+				<Route path="/" element={<Main />} />
 				{/* <Route path="/contect" element={<Contect />} /> */}
 				<Route path="*" element={<Navigate to="/" replace />}  />
 			</Routes>
