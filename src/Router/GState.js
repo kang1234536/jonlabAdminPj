@@ -6,8 +6,11 @@ export const GState = React.createContext(null);
 // 전역으로 사용할 변수 및 function 주입
 const GStateProvider = ({ children }) => {
 
+	const [pageRoot, setPageRoot] = useState('/');
+
 	const value = {
-		
+		pageRoot,
+		setPageRoot,
 	};
 
 	

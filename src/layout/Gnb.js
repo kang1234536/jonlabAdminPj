@@ -1,14 +1,15 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef, useEffect, useContext} from 'react';
 import { Link } from 'react-router-dom';
-import SimpleBar from 'simplebar-react';
+// import SimpleBar from 'simplebar-react';
 import Selectbox from 'ui_component/selectbox';
 import Searchbox from 'ui_component/searchbox';
-import 'simplebar/dist/simplebar.min.css';
+import {GState} from 'Router/GState';
 
 const Gnb = () => {
 	const gnbEl = useRef(null);
 	const itemMenuList = useRef(null);
 	const btnFold = useRef(null);
+	const {pageRoot} = useContext(GState);
 	// let itemDepth01;
 
 	const subDepthCloseAll = ()=>{
@@ -18,65 +19,68 @@ const Gnb = () => {
 		});
 	}
 
-	useEffect(()=>{
-		// let itemDepth01 = document.querySelectorAll(`.${itemMenuList.current.className} > ul > li > a`);
-		let itemDepth01 = document.querySelectorAll(`.${itemMenuList.current.className} > ul > li > a`);
+	const gnbFoldFnc = (e)=>{
+		// console.log(e);
+		console.log('e.target.parentNode ======== ', e.target.parentNode);
+		var btnFold = e.target.parentNode;
+		var classList = btnFold.classList;
+		var containerEl = gnbEl.current.nextElementSibling;
+		var footerEl = document.querySelector('#footer');
+		var fixedBtnbox = document.querySelector('.fixedBtnBox');
+		var hasClass = false;
 
-		itemDepth01.forEach((el)=>{
-			el.addEventListener('click', (e)=> {
-				e.preventDefault();
-				var _this = e.target;
-				var _next = _this.nextElementSibling;
-				var _nextStyle = _next.style;
-				var _liItem = _this.closest('.gnbListBox > ul > li');
-
-				if(_nextStyle.display === '' || _nextStyle.display === 'none') {
-					subDepthCloseAll();
-					_nextStyle.display = 'block';
-					_liItem.classList.add('active');
-				}else{
-					_nextStyle.display = 'none';
-					_liItem.classList.remove('active');
-				}
-			});
-		});
-
-		btnFold.current.addEventListener('click', (e)=>{
-			// console.log(e);
-			var classList = btnFold.current.classList;
-			var containerEl = gnbEl.current.nextElementSibling;
-			var footerEl = document.querySelector('#footer');
-			var fixedBtnbox = document.querySelector('.fixedBtnBox');
-			var hasClass = false;
-
-			classList.forEach((val)=>{
-				if(val === 'close') {
-					hasClass = true;
-				}
-				return false;
-			});
-
-			if(hasClass) {
-				gnbEl.current.style.left = '0';
-				classList.remove('close');
-				containerEl.style.paddingLeft = '250px';
-				footerEl.style.left = '220';
-				console.log(fixedBtnbox);
-				if(fixedBtnbox) fixedBtnbox.style.left = '220px';
-			}else{
-				gnbEl.current.style.left = '-220px';
-				classList.add('close');
-				containerEl.style.paddingLeft = '30px';
-				footerEl.style.left = '0';
-				if(fixedBtnbox) fixedBtnbox.style.left = '0';
+		console.log(classList);
+		classList.forEach((val)=>{
+			console.log(val);
+			if(val === 'close') {
+				hasClass = true;
 			}
-
+			return false;
 		});
-	});
+
+		if(hasClass) {
+			gnbEl.current.style.left = '0';
+			classList.remove('close');
+			containerEl.style.paddingLeft = '250px';
+			footerEl.style.left = '220';
+			console.log('111======', fixedBtnbox);
+			if(fixedBtnbox) fixedBtnbox.style.left = '220px';
+		}else{
+			gnbEl.current.style.left = '-220px';
+			classList.add('close');
+			containerEl.style.paddingLeft = '30px';
+			footerEl.style.left = '0';
+			console.log('222======', fixedBtnbox);
+			if(fixedBtnbox) fixedBtnbox.style.left = '0';
+		}
+	}
+
+	
+	const subDepthClick = (e)=>{
+		e.preventDefault();
+		var _this = e.target;
+		var _next = _this.nextElementSibling;
+		var _nextStyle = _next.style;
+		var _liItem = _this.closest('.gnbListBox > ul > li');
+
+		if(_nextStyle.display === '' || _nextStyle.display === 'none') {
+			subDepthCloseAll();
+			_nextStyle.display = 'block';
+			_liItem.classList.add('active');
+		}else{
+			_nextStyle.display = 'none';
+			_liItem.classList.remove('active');
+		}
+	}
+
+	useEffect(()=>{
+
+
+	}, [pageRoot]);
 
 	return (
 		<nav id="gnb" ref={gnbEl}>
-			<SimpleBar className="gnbInner">
+			<div  className="gnbInner">
 				<div className="gnbTop">
 					<div className="userInfo">
 						<span className="photo">
@@ -90,13 +94,14 @@ const Gnb = () => {
 							defaultVal = {'상품번호'}
 							selectVal = {['구매자명', '구매자연락처', '수취인명', '상품번호', '운송장번호']}
 						/>
-						<Searchbox></Searchbox>
+
+						<Searchbox />
 					</div>
 				</div>
 				<div className="gnbListBox" ref={itemMenuList}>
 					<ul>
 						<li>
-							<Link to="guide">guide</Link>
+							<button type="button" onClick={subDepthClick}>guide</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="register_template">register guide</Link></li>
@@ -107,7 +112,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">상품관리</Link>
+							<button type="button" onClick={subDepthClick}>상품관리</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="regPrd">상품등록</Link></li>
@@ -115,7 +120,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth03</Link>
+							<button type="button" onClick={subDepthClick}>depth03</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth03_01</Link></li>
@@ -126,7 +131,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth01</Link>
+							<button type="button" onClick={subDepthClick}>depth01</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth01_01</Link></li>
@@ -137,7 +142,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth02</Link>
+							<button type="button" onClick={subDepthClick}>depth02</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth02_01</Link></li>
@@ -148,7 +153,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth03</Link>
+							<button type="button" onClick={subDepthClick}>depth03</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth03_01</Link></li>
@@ -159,7 +164,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth01</Link>
+							<button type="button" onClick={subDepthClick}>depth01</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth01_01</Link></li>
@@ -170,7 +175,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth02</Link>
+							<button type="button" onClick={subDepthClick}>depth02</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth02_01</Link></li>
@@ -181,7 +186,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth03</Link>
+							<button type="button" onClick={subDepthClick}>depth03</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth03_01</Link></li>
@@ -192,7 +197,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth01</Link>
+							<button type="button" onClick={subDepthClick}>depth01</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth01_01</Link></li>
@@ -203,7 +208,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth02</Link>
+							<button type="button" onClick={subDepthClick}>depth02</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth02_01</Link></li>
@@ -214,7 +219,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth03</Link>
+							<button type="button" onClick={subDepthClick}>depth03</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth03_01</Link></li>
@@ -225,7 +230,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth01</Link>
+							<button type="button" onClick={subDepthClick}>depth01</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth01_01</Link></li>
@@ -236,7 +241,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth02</Link>
+							<button type="button" onClick={subDepthClick}>depth02</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth02_01</Link></li>
@@ -247,7 +252,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth03</Link>
+							<button type="button" onClick={subDepthClick}>depth03</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth03_01</Link></li>
@@ -258,7 +263,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth01</Link>
+							<button type="button" onClick={subDepthClick}>depth01</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth01_01</Link></li>
@@ -269,7 +274,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth02</Link>
+							<button type="button" onClick={subDepthClick}>depth02</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth02_01</Link></li>
@@ -280,7 +285,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth03</Link>
+							<button type="button" onClick={subDepthClick}>depth03</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth03_01</Link></li>
@@ -291,7 +296,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth01</Link>
+							<button type="button" onClick={subDepthClick}>depth01</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth01_01</Link></li>
@@ -302,7 +307,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth02</Link>
+							<button type="button" onClick={subDepthClick}>depth02</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth02_01</Link></li>
@@ -313,7 +318,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth03</Link>
+							<button type="button" onClick={subDepthClick}>depth03</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth03_01</Link></li>
@@ -324,7 +329,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth01</Link>
+							<button type="button" onClick={subDepthClick}>depth01</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth01_01</Link></li>
@@ -335,7 +340,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth02</Link>
+							<button type="button" onClick={subDepthClick}>depth02</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth02_01</Link></li>
@@ -346,7 +351,7 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth03</Link>
+							<button type="button" onClick={subDepthClick}>depth03</button>
 							<div className="depth02">
 								<ul>
 									<li><Link to="#">depth03_01</Link></li>
@@ -358,8 +363,8 @@ const Gnb = () => {
 						</li>
 					</ul>
 				</div>
-			</SimpleBar>
-			<div className="btnFold" ref={btnFold}><button type="button"><em>접기</em></button></div>
+			</div>
+			<div className="btnFold" onClick={gnbFoldFnc}><button type="button"><em>접기</em></button></div>
 		</nav>
 	);
 }

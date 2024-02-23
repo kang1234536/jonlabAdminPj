@@ -3,7 +3,7 @@
 #root {position:relative;box-sizing:border-box;min-width:1024px;height:100%;min-height:100%;height:auto !important;padding:0 0 200px;background-color:#eaeef3;}
 
 #header {position:fixed;left:0;top:0;box-sizing:border-box;width:100%;padding:0 20px;background-color:#000;z-index:50;}
-#header .logo a {display:block;width:120px;height:55px;background:url('../images/logo_whynot_white.png') no-repeat center;background-size:100% auto;}
+#header .logo a {display:block;width:120px;height:55px;margin-left:-20px;padding:0 20px;background:#fff url('../images/logo.png') no-repeat center;background-size:150px auto;}
 #header .logo a em {display:block;overflow:hidden;width:0;height:0;line-height:0;}
 
 #gnb {position:fixed;left:0;top:55px;bottom:0;width:220px;line-height:20px;background-color:#3c4757;transition:left .6s ease;z-index:50;}
@@ -21,10 +21,10 @@
 /* #gnb .gnbListBox {display:block;background} */
 #gnb .gnbListBox > ul {padding:15px 0;}
 #gnb .gnbListBox > ul > li {padding:0 25px;}
-#gnb .gnbListBox > ul > li > a {display:block;position:relative;padding:10px;font-size:14px;font-weight:500;color:#fff;border-top:1px solid #515d6e;}
-#gnb .gnbListBox > ul > li:first-child > a {border-top:none;}
-#gnb .gnbListBox > ul > li > a:after {display:block;content:"";position:absolute;right:10px;top:50%;width:5px;height:5px;border-left:1px solid #949ca6;border-top:1px solid #949ca6;transform:translate(0, -50%) rotate(-135deg);}
-#gnb .gnbListBox > ul > li.active > a:after {transform:translate(0, -50%) rotate(45deg);}
+#gnb .gnbListBox > ul > li > button {display:block;position:relative;box-sizing:border-box;width:100%;padding:10px;font-size:14px;font-weight:500;color:#fff;text-align:left;border-top:1px solid #515d6e;}
+#gnb .gnbListBox > ul > li:first-child > button {border-top:none;}
+#gnb .gnbListBox > ul > li > button:after {display:block;content:"";position:absolute;right:10px;top:50%;width:5px;height:5px;border-left:1px solid #949ca6;border-top:1px solid #949ca6;transform:translate(0, -50%) rotate(-135deg);}
+#gnb .gnbListBox > ul > li.active > button:after {transform:translate(0, -50%) rotate(45deg);}
 #gnb .gnbListBox .depth02 {display:none;margin:0 -25px;padding:10px 0;background-color:#39404d;}
 #gnb .gnbListBox .depth02 > ul > li {padding:0 30px;}
 #gnb .gnbListBox .depth02 > ul > li > a {display:block;padding:10px 5px;color:#949ca6;}
