@@ -27,7 +27,11 @@ const RouterSet = () => {
 
 			<Routes>
 				<Route path="/" element={<Main />} />
-				{/* <Route path="/contect" element={<Contect />} /> */}
+				<Route path="/register_template" element={<RegTemplate />} />
+				<Route path="/form_item" element={<FormItem />} />
+				<Route path="/table_item" element={<TableItem />} />
+				<Route path="/tab_item" element={<TabItem />} />
+				<Route path="/regPrd" element={<ProductReg />} />
 				<Route path="*" element={<Navigate to="/" replace />}  />
 			</Routes>
 

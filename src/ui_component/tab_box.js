@@ -7,20 +7,20 @@ const TabCmpt = ({children, setIndex, tabName, setViewBox}) => {
 	const [activeIndex, setActiveIndex] = useState(setIndex || 0);
 	const tabWrap = useRef(null);
 
-	const params = {
-		slidesPerView: 'auto',
-		WrapperEl: 'ul',
-		freeMode: true,
-		// pagination: {
-		// 	el: `.${wrapperName} .tabItem .swiper-pagination`,
-		// 	clickable: true,
-		// },
-		// on : {
-		// 	init : (swiper)=> {
-		// 		console.log(tabWrap.current.className);
-		// 	}
-		// }
-	}
+	// const params = {
+	// 	slidesPerView: 'auto',
+	// 	WrapperEl: 'ul',
+	// 	freeMode: true,
+	// 	// pagination: {
+	// 	// 	el: `.${wrapperName} .tabItem .swiper-pagination`,
+	// 	// 	clickable: true,
+	// 	// },
+	// 	// on : {
+	// 	// 	init : (swiper)=> {
+	// 	// 		console.log(tabWrap.current.className);
+	// 	// 	}
+	// 	// }
+	// }
 
 	useEffect(()=>{
 		setViewBox(activeIndex);
@@ -31,13 +31,13 @@ const TabCmpt = ({children, setIndex, tabName, setViewBox}) => {
 		<div className="tabWrap" ref={tabWrap}>
 			<div className="tabItem">
 				<div className="cmptSwiper">
-					<Swiper {...params}>
+					<ul>
 						{
 							tabName.map((val, i)=>{
 								return <li key={i} className={activeIndex === i ? 'active' : ''}><button type="button" onClick={()=>setActiveIndex(i)}><span>{val}</span></button></li>;
 							})
 						}
-					</Swiper>
+					</ul>
 				</div>
 			</div>
 			<div className="tabItemView">
