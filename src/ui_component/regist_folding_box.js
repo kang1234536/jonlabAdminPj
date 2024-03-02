@@ -9,7 +9,6 @@ const RegFoldItemBox = ({children, title, helpTip, tooltip, essential, closed}) 
 	const [openConts, setOpenConts] = useState(closed ? false : true);//false 닫힘, true:열림
 
 	const openFoldFn = (e)=>{
-		console.log(e.target);
 		setOpenConts(openConts ? false : true)
 	}
 

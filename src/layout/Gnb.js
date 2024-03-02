@@ -87,16 +87,9 @@ const Gnb = () => {
 							{/* 사용자 선택 이미지 있을경우 img 태그로 넣어줌 */}
 							{/* <img src="/resources/images/temp/temp_user_photo.jpg" alt="" /> */}
 						</span>
-						<strong className="userId">TIIKI</strong>
+						<strong className="userId">Jone</strong>
 					</div>
-					<div className="searchBox">
-						<Selectbox
-							defaultVal = {'상품번호'}
-							selectVal = {['구매자명', '구매자연락처', '수취인명', '상품번호', '운송장번호']}
-						/>
 
-						<Searchbox />
-					</div>
 				</div>
 				<div className="gnbListBox" ref={itemMenuList}>
 					<ul>
