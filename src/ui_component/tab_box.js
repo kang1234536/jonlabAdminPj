@@ -1,54 +1,50 @@
 import React, { useRef, useEffect, useState } from 'react';
-import Swiper from 'swiper';
 import PropTypes from 'prop-types';
 
-const TabCmpt = ({children, setIndex, tabName, setViewBox}) => {
-	let wrapperName = null;
-	const [activeIndex, setActiveIndex] = useState(setIndex || 0);
-	const tabWrap = useRef(null);
+const goPanel = ()=>{
+	
+}
 
-	// const params = {
-	// 	slidesPerView: 'auto',
-	// 	WrapperEl: 'ul',
-	// 	freeMode: true,
-	// 	// pagination: {
-	// 	// 	el: `.${wrapperName} .tabItem .swiper-pagination`,
-	// 	// 	clickable: true,
-	// 	// },
-	// 	// on : {
-	// 	// 	init : (swiper)=> {
-	// 	// 		console.log(tabWrap.current.className);
-	// 	// 	}
-	// 	// }
-	// }
+const TabCmpt = ({children, setIndex, tabItems, setViewBox}) => {
+	const [activeIndex, setActiveIndex] = useState(setIndex || 0);
+	const tabListWrap = useRef(null);
+	const tabPanelWrap = useRef(null);
+
+	const tabChangeFn = (idx)=>{
+		setActiveIndex(idx);
+	}
 
 	useEffect(()=>{
+		console.log('dddd');
 		setViewBox(activeIndex);
-		if(wrapperName === null) wrapperName = tabWrap.current.className;
 	}, [activeIndex]);
 
 	return (
-		<div className="tabWrap" ref={tabWrap}>
-			<div className="tabItem">
-				<div className="cmptSwiper">
-					<ul>
+		<>
+			<div className="tabListWrap" ref={tabListWrap}>
+				<div className="tabListInner">
+					<ul className="tabItems">
 						{
-							tabName.map((val, i)=>{
-								return <li key={i} className={activeIndex === i ? 'active' : ''}><button type="button" onClick={()=>setActiveIndex(i)}><span>{val}</span></button></li>;
+							tabItems.map((val, i)=>{
+								if(activeIndex === i) {
+									return <li key={i} className="tabItem active"><button type="button" title="선택됨" onClick={()=>tabChangeFn(i)}><span>{val}</span></button></li>;
+								}else{
+									return <li key={i} className="tabItem"><button type="button" onClick={()=>tabChangeFn(i)}><span>{val}</span></button></li>;
+								}
 							})
 						}
 					</ul>
 				</div>
 			</div>
-			<div className="tabItemView">
+			<div className="tabPanelWrap" ref={tabPanelWrap}>
 				{children}
 			</div>
-		</div>
+		</>
 	);
 }
 
 TabCmpt.propTypes = {
-	tabName : PropTypes.array.isRequired,
+	tabItems : PropTypes.array.isRequired,
 	children : PropTypes.any.isRequired,
 	setViewBox : PropTypes.func.isRequired,
 	setIndex : PropTypes.number,

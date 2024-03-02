@@ -1,10 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PageTitle from 'ui_component/page_title';
 import RegFoldItemBox from 'ui_component/regist_folding_box';
 import TabCmpt from 'ui_component/tab_box';
 
 const TableItem = () => {
-	var [tabmenu, setTabmenu] = useState(null);//tab contents view state
+	const TabCmpt1 = TabCmpt;
+	const [tabPanel, setTabPanel] = useState(0);//tab contents view state
+
+	const goPanel = (idx)=>{
+		console.log(TabCmpt1);
+	}
+
+	useEffect(()=>{
+		console.log(TabCmpt);
+	}, []);
 
 	return (
 		<div className="contents">
@@ -27,74 +36,144 @@ const TableItem = () => {
 					</p>
 				}
 			>
-				<TabCmpt
-					setIndex={3}
-					tabName={
+				<TabCmpt1
+					setIndex={tabPanel}
+					tabItems={
 						['Slide #1', 'Slide #2', 'Slide #3', 'Slide #4', 'Slide #5', 'Slide #6', 'Slide #7', 'Slide #8', 'Slide #9']
 					}
-					setViewBox={setTabmenu}
+					setViewBox={setTabPanel}
+					goPanel = {goPanel}
 				>
 					{
-						tabmenu === 0 &&
-						<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'red'}}>
+						tabPanel === 0 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'red'}}>
 							TAB CONTENTS #01
+							<br />
+
+							<button type="button" onClick={()=>{goPanel(3)}}>4번탭으로 이동</button>
 						</div>
 					}
 					{
-						tabmenu === 1 &&
-						<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'blue'}}>
+						tabPanel === 1 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'blue'}}>
 							TAB CONTENTS #02
 						</div>
 					}
 					{
-						tabmenu === 2 &&
-						<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'green'}}>
+						tabPanel === 2 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'green'}}>
 							TAB CONTENTS #03
 						</div>
 					}
 					{
-						tabmenu === 3 &&
-						<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'orange'}}>
+						tabPanel === 3 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'orange'}}>
 							TAB CONTENTS #04
 						</div>
 					}
 					{
-						tabmenu === 4 &&
-						<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'yellow'}}>
+						tabPanel === 4 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'yellow'}}>
 							TAB CONTENTS #05
 						</div>
 					}
 					{
-						tabmenu === 5 &&
-						<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'pink'}}>
+						tabPanel === 5 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'pink'}}>
 							TAB CONTENTS #06
 						</div>
 					}
 					{
-						tabmenu === 6 &&
-						<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'blueviolet'}}>
+						tabPanel === 6 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'blueviolet'}}>
 							TAB CONTENTS #07
 						</div>
 					}
 					{
-						tabmenu === 7 &&
-						<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'teal'}}>
+						tabPanel === 7 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'teal'}}>
 							TAB CONTENTS #08
 						</div>
 					}
 					{
-						tabmenu === 8 &&
-						<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'green'}}>
+						tabPanel === 8 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'green'}}>
 							TAB CONTENTS #09
 						</div>
 					}
-				</TabCmpt>
+				</TabCmpt1>
 			</RegFoldItemBox>
 			
 			<RegFoldItemBox
 				title={'tab version02'}
 			>
-				<div></div>
+				<TabCmpt
+					setIndex={tabPanel}
+					tabItems={
+						['Slide #1', 'Slide #2', 'Slide #3', 'Slide #4', 'Slide #5', 'Slide #6', 'Slide #7', 'Slide #8', 'Slide #9']
+					}
+					setViewBox={setTabPanel}
+					goPanel = {goPanel}
+				>
+					{
+						tabPanel === 0 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'red'}}>
+							TAB CONTENTS #01
+							<br />
+
+							
+						</div>
+					}
+					{
+						tabPanel === 1 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'blue'}}>
+							TAB CONTENTS #02
+						</div>
+					}
+					{
+						tabPanel === 2 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'green'}}>
+							TAB CONTENTS #03
+							<button type="button" onClick={()=>{goPanel(0)}}>1번탭으로 이동</button>
+						</div>
+					}
+					{
+						tabPanel === 3 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'orange'}}>
+							TAB CONTENTS #04
+						</div>
+					}
+					{
+						tabPanel === 4 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'yellow'}}>
+							TAB CONTENTS #05
+						</div>
+					}
+					{
+						tabPanel === 5 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'pink'}}>
+							TAB CONTENTS #06
+						</div>
+					}
+					{
+						tabPanel === 6 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'blueviolet'}}>
+							TAB CONTENTS #07
+						</div>
+					}
+					{
+						tabPanel === 7 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'teal'}}>
+							TAB CONTENTS #08
+						</div>
+					}
+					{
+						tabPanel === 8 &&
+						<div className="tabPanel" style={{'padding' : '20px', 'backgroundColor' : 'green'}}>
+							TAB CONTENTS #09
+						</div>
+					}
+				</TabCmpt>
 			</RegFoldItemBox>
 
 		</div>

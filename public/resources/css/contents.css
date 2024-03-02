@@ -147,6 +147,7 @@
 [class^="regItemWrap"] [class^="regInptBox"] {padding:20px;border-top:1px solid #dbdde2;}
 [class^="regItemWrap"] [class^="regInptBox"] [class^="inptxtItem"] {width:100%;}
 [class^="regItemWrap"] [class^="regInptBox"] [class^="inpNumItem"] {width:100%;}
+[class^="regItemWrap"] [class^="regInptBox"] [class^="tabListWrap"] {margin:-20px -20px 0;}
 
 /* 하단 고정 버튼 박스 */
 [class^="fixedBtnBox"] {position:fixed;left:220px;right:0;bottom:0;padding:10px 20px;border-top:1px solid #d9d9d9;background-color:#ecedef;z-index:50;transition:left .6s ease;}
@@ -206,17 +207,21 @@
 [class^="nodata"] .tit {display:block;padding:70px 0 0;line-height:20px;font-size:16px;text-align:center !important;background:url('../images/ico_nodata.gif') no-repeat center top;background-size:50px;}
 
 /* tab box */
-[class^="regItemWrap"] [class^="regInptBox"] [class^="tabWrap"] {margin:-20px -20px 0;}
-[class^="tabWrap"] {margin:0 -20px;}
-[class^="tabWrap"] .tabItem {padding:0;border-bottom:1px solid #dbdde2;}
-[class^="tabWrap"] .tabItem [class^="cmptSwiper"] {padding:0 20px;}
-[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide {position:relative;}
-[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide:after {display:block;content:"";position:absolute;left:-1px;top:50%;width:1px;height:10px;margin:-5px 0 0;background-color:#dbdde2}
-[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide button {width:100%;padding:20px 0;}
-[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide button span {display:inline-block;padding:5px 20px;line-height:20px;font-size:16px;}
-[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide.active button span{position:relative;color:#0035bd;}
-[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide.active button span:after {display:block;content:"";position:absolute;left:20px;right:20px;bottom:0;height:2px;background-color:#0035bd;}
-[class^="tabWrap"] [class^="tabConts"] {display:block;margin:20px 20px 0;}
+[class^="tabListWrap"] {margin:0 -20px;}
+[class^="tabListWrap"] [class^="tabListInner"] {overflow-x:auto;overflow-y:hidden;}
+[class^="tabListWrap"] [class^="tabListInner"]::-webkit-scrollbar {display:none;}
+[class^="tabListWrap"] .tabItems {display:flex;padding:0;border-bottom:1px solid #dbdde2;}
+[class^="tabListWrap"] .tabItems .tabItem {position:relative;}
+[class^="tabListWrap"] .tabItems .tabItem button {width:100%;padding:20px 0;white-space:nowrap;}
+[class^="tabListWrap"] .tabItems .tabItem span {display:inline-block;padding:5px 20px;line-height:20px;font-size:16px;}
+/* [class^="tabListWrap"] .tabItems .tabItem .swiper-slide {position:relative;}
+[class^="tabListWrap"] .tabItems .tabItem .swiper-slide:after {display:block;content:"";position:absolute;left:-1px;top:50%;width:1px;height:10px;margin:-5px 0 0;background-color:#dbdde2}
+[class^="tabListWrap"] .tabItems .tabItem .swiper-slide button {width:100%;padding:20px 0;}
+[class^="tabListWrap"] .tabItems .tabItem .swiper-slide button span {display:inline-block;padding:5px 20px;line-height:20px;font-size:16px;}
+[class^="tabListWrap"] .tabItems .tabItem .swiper-slide.active button span{position:relative;color:#0035bd;}
+[class^="tabListWrap"] .tabItems .tabItem .swiper-slide.active button span:after {display:block;content:"";position:absolute;left:20px;right:20px;bottom:0;height:2px;background-color:#0035bd;} */
+
+[class^="tabPanelWrap"] {display:block;margin:20px 20px 0;}
 
 /* category 선택 BOX */
 [class^="cateListWrap"] {overflow:hidden;padding:15px;}
