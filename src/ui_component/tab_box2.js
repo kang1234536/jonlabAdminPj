@@ -1,23 +1,18 @@
-import React, { useRef, useEffect, useState, forwardRef, useImperativeHandle } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const TabCmpt = forwardRef(({children, setIndex, tabItems, setViewBox}, ref) => {
+const TabCmpt = ({children, setIndex, tabItems, setViewBox}) => {
+
+	console.log('TabCmpt start ========= ');
+	console.log(this);
+
 	const [activeIndex, setActiveIndex] = useState(setIndex || 0);
 	const tabListWrap = useRef(null);
 	const tabPanelWrap = useRef(null);
 
-	const tabChangeFn = (idx)=>{
+	Object.tabChangeFn = (idx)=>{
 		setActiveIndex(idx);
 	}
-
-
-	useImperativeHandle(ref, ()=>{
-		return {
-			tabChange : (idx)=>{
-				tabChangeFn(idx);
-			}
-		}
-	})
 
 	useEffect(()=>{
 		setViewBox(activeIndex);
@@ -31,9 +26,9 @@ const TabCmpt = forwardRef(({children, setIndex, tabItems, setViewBox}, ref) => 
 						{
 							tabItems.map((val, i)=>{
 								if(activeIndex === i) {
-									return <li key={i} className="tabItem active"><button type="button" title="선택됨" onClick={()=>tabChangeFn(i)}><span>{val}</span></button></li>;
+									return <li key={i} className="tabItem active"><button type="button" title="선택됨" onClick={()=>Object.tabChangeFn(i)}><span>{val}</span></button></li>;
 								}else{
-									return <li key={i} className="tabItem"><button type="button" onClick={()=>tabChangeFn(i)}><span>{val}</span></button></li>;
+									return <li key={i} className="tabItem"><button type="button" onClick={()=>Object.tabChangeFn(i)}><span>{val}</span></button></li>;
 								}
 							})
 						}
@@ -45,7 +40,7 @@ const TabCmpt = forwardRef(({children, setIndex, tabItems, setViewBox}, ref) => 
 			</div>
 		</>
 	);
-});
+}
 
 TabCmpt.propTypes = {
 	tabItems : PropTypes.array.isRequired,

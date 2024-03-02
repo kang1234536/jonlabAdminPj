@@ -15,7 +15,7 @@
     "react-scripts": "5.0.1",
     "simplebar": "^6.2.5",
     "simplebar-react": "^3.2.4",
-    "swiper": "^11.0.6",
+    "swiper": "^11.0.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

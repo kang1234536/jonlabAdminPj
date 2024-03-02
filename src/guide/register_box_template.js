@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import PageTitle from 'ui_component/page_title';
 import RegFoldItemBox from 'ui_component/regist_folding_box';
 import InputTxt from 'ui_component/input_txt';
 import InputNum from 'ui_component/input_num';
 import Selectbox02 from 'ui_component/selectbox02';
+import Buttons from 'ui_component/buttons';
 
 
 const RegTemplate = () => {
+	const iptNum = useRef(null);
+
+	const btnClick1 = (e)=>{
+		console.log('btn01 click ========== ');
+	}
 
 	return (
 		<div className="contents">
@@ -47,8 +53,9 @@ const RegTemplate = () => {
 			>
 			  <div className="regUnitRow">
 				  <InputNum
-				  width = {'200px'}
-				  unit={'원'}
+					width = {'200px'}
+					unit={'원'}
+					ref={iptNum}
 				  />
 				  <span className="unitTxt">할인</span>
 			  </div>
@@ -77,10 +84,10 @@ const RegTemplate = () => {
 
 			<div className="fixedBtnBox">
 				<div className="btnR">
-					<button type="button" className="btnItemL03"><span>미리보기</span></button>
-					<button type="button" className="btnItemL03"><span>임시저장하기</span></button>
-					<button type="button" className="btnItemL02"><span>저장하기</span></button>
-					<button type="button" className="btnItemL"><span>취소하기</span></button>
+					<Buttons btnType={'button'} name={'btnItemL03'} txt={'미리보기'} clickCall={btnClick1} />
+					<Buttons btnType={'button'} name={'btnItemL03'} txt={'임시저장하기'} />
+					<Buttons btnType={'button'} name={'btnItemL02'} txt={'저장하기'} />
+					<Buttons btnType={'button'} name={'btnItemL'} txt={'취소하기'} />
 				</div>
 			</div>
 

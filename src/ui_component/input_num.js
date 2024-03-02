@@ -1,18 +1,11 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef, useEffect, forwardRef} from 'react';
 import PropTypes from 'prop-types';
 
-const InputNum = ({width, unit}) => {
+const InputNum = forwardRef(({width, unit}, ref) => {
 	const iptWrap = useRef(null);
 	const ipt = useRef(null);
 
-	const initFn = ()=> {
-		
-	}
-
 	useEffect(()=> {
-
-		initFn();
-
 		ipt.current.addEventListener('keyup', (e)=> {
 			// console.log('keyup');
 			var regexp = /[^0-9]/g;
@@ -35,7 +28,7 @@ const InputNum = ({width, unit}) => {
 			<em className="unit">{unit}</em>
 		</span>
 	);
-}
+})
 
 InputNum.propTypes = {
 	width : PropTypes.string,

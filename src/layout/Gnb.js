@@ -364,7 +364,7 @@ const Gnb = () => {
 					</ul>
 				</div>
 			</div>
-			<div className="btnFold" onClick={gnbFoldFnc}><button type="button"><em>접기</em></button></div>
+			<div className="gnbFold" onClick={gnbFoldFnc}><button type="button"><em>접기</em></button></div>
 		</nav>
 	);
 }
