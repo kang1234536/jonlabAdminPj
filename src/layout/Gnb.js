@@ -87,7 +87,7 @@ const Gnb = () => {
 							{/* 사용자 선택 이미지 있을경우 img 태그로 넣어줌 */}
 							{/* <img src="/resources/images/temp/temp_user_photo.jpg" alt="" /> */}
 						</span>
-						<strong className="userId">Jone</strong>
+						<strong className="userId">J-one</strong>
 					</div>
 
 				</div>

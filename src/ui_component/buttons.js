@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 
-const Buttons = ({name, btnType, txt, clickCall, blind, children}) => {
+const Buttons = ({name, typeName = 'button', txt, clickCall, blind, children}) => {
 	const btnClick = (e)=>{
 		if(clickCall) {
 			e.stopPropagation();
@@ -11,15 +11,15 @@ const Buttons = ({name, btnType, txt, clickCall, blind, children}) => {
 
 
 	if(children !== undefined) {
-		return <button type={btnType} className={name} onClick={btnClick}>{children}</button>
+		return <button type={typeName} className={name} onClick={btnClick}>{children}</button>
 	}
 
-	return <button type={btnType} className={name} onClick={btnClick}><span className={blind && 'blind'}>{txt}</span></button>
+	return <button type={typeName} className={name} onClick={btnClick}><span className={blind && 'blind'}>{txt}</span></button>
 }
 
 Buttons.propTypes = {
 	name : PropTypes.string.isRequired,
-	btnType : PropTypes.string.isRequired,
+	typeName : PropTypes.string,
 	txt : PropTypes.string,
 	clickCall : PropTypes.func,
 	blind : PropTypes.bool,

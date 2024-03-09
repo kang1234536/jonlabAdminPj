@@ -12,7 +12,7 @@ import FormItem from 'guide/FormItem';
 import TableItem from 'guide/TableItem';
 import TabItem from 'guide/TabItem';
 import RegTemplate from 'guide/register_box_template';
-import ProductReg from 'page/prdReg/ProductReg';
+import PrdReg from 'page/prdReg';
 import Header from 'layout/Header';
 import Gnb from 'layout/Gnb';
 import Footer from 'layout/Footer';
@@ -25,26 +25,16 @@ const RouterSet = () => {
 			<Gnb />
 			<div id="container">
 
-			<Routes>
-				<Route path="/" element={<Main />} />
-				<Route path="/register_template" element={<RegTemplate />} />
-				<Route path="/form_item" element={<FormItem />} />
-				<Route path="/table_item" element={<TableItem />} />
-				<Route path="/tab_item" element={<TabItem />} />
-				<Route path="/regPrd" element={<ProductReg />} />
-				<Route path="*" element={<Navigate to="/" replace />}  />
-			</Routes>
+				<Routes>
+					<Route path="/" element={<Main />} />
+					<Route path="/register_template" element={<RegTemplate />} />
+					<Route path="/form_item" element={<FormItem />} />
+					<Route path="/table_item" element={<TableItem />} />
+					<Route path="/tab_item" element={<TabItem />} />
+					<Route path="/regPrd" element={<PrdReg />} />
+					<Route path="*" element={<Navigate to="/" replace />}  />
+				</Routes>
 
-
-				{/* <Switch>
-					<Route path="/" exact component={Main} />
-					<Route path="/register_template" component={RegTemplate} />
-					<Route path="/form_item" component={FormItem} />
-					<Route path="/table_item" component={TableItem} />
-					<Route path="/tab_item" component={TabItem} />
-					<Route path="/regPrd" component={ProductReg} />
-					<Redirect from="*" to="/" />
-				</Switch> */}
 			</div>
 			<Footer />
 		</BRouter>
