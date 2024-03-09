@@ -49,6 +49,7 @@ const PrdReg = () => {
 			<Layer 
 				idName = {'previewModal'}
 				layerTitle="미리보기"
+				// name="layerWrap02"
 				setClose = {setIsPrevPopOpen}
 			>
 				modal popup sample

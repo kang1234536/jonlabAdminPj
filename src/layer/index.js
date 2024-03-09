@@ -29,6 +29,7 @@ const Layer = ({children, blindHeader, layerTitle, name, idName, setClose}) => {
 			idName = {idName}
 			name = {name ? name : 'layerWrap'}
 		>
+			<div className="layerMask" aria-hidden="true" onClick={closeLayerFn}></div>
 			<div className="layerBox">
 				<div className={blindHeader ? "layerHeader blind" : "layerHeader" }>
 					<h1 className="layerTit">{layerTitle}</h1>
