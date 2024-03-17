@@ -4,9 +4,11 @@ import GStateProvider from 'Router/GState';
 
 const App = () => {
 	return (
+
 		<GStateProvider>
 			<RouterSet />
 		</GStateProvider>
+	
 	);
 }
 

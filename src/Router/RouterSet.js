@@ -24,7 +24,6 @@ const RouterSet = () => {
 			<Header />
 			<Gnb />
 			<div id="container">
-
 				<Routes>
 					<Route path="/" element={<Main />} />
 					<Route path="/register_template" element={<RegTemplate />} />
