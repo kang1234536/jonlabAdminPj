@@ -16,7 +16,7 @@ import PrdReg from 'page/prdReg';
 import Header from 'layout/Header';
 import Gnb from 'layout/Gnb';
 import Footer from 'layout/Footer';
-
+ 
  
 const RouterSet = () => {
 	return (

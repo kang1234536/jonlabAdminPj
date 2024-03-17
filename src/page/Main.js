@@ -20,7 +20,7 @@ const Main = () => {
 			user_pw : userPw2
 			}
 		},
-		{ 
+		{  
 			 enabled: false, 
 			 notifyOnNetworkStatusChange: true,
 			 fetchPolicy: "network-only"

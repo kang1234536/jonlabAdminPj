@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
- 
+   
 const GetUser = gql`
 query MyQuery {
     COM_USER_INFO {

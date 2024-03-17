@@ -19,7 +19,7 @@
     "simplebar-react": "^3.2.4",
     "swiper": "^11.0.7",
     "web-vitals": "^2.1.4"
-  }, 
+  },  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
