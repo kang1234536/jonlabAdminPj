@@ -206,7 +206,7 @@ const TableItem = () => {
 						</thead>
 						<tbody>
 							<tr>
-								<td colspan="5">
+								<td colSpan="5">
 									<div className="nodata">
 										<span className="tit">내용이 없습니다.</span>
 									</div>

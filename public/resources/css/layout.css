@@ -3,8 +3,11 @@
 #root {position:relative;box-sizing:border-box;min-width:1024px;height:100%;min-height:100%;height:auto !important;padding:0 0 200px;}
 
 #header {position:fixed;left:0;top:0;box-sizing:border-box;width:100%;padding:0 20px;background-color:#ccc;z-index:50;}
+#header .headerInner {display:flex;justify-content:space-between;}
+#header .logo {flex-shrink:0;}
 #header .logo a {display:block;width:120px;height:55px;margin-left:-20px;padding:0 20px;background:url('../images/logo.png') no-repeat center;background-size:150px auto;}
 #header .logo a em {display:block;overflow:hidden;width:0;height:0;line-height:0;}
+#header .headerUtil {padding:16px 0 0;}
 
 #gnb {position:fixed;left:0;top:55px;bottom:0;width:220px;line-height:20px;background-color:#3c4757;transition:left .6s ease;z-index:50;}
 #gnb .gnbInner {display:block;overflow-x:hidden;overflow-y:auto;position:relative;height:100%;}
@@ -21,6 +24,7 @@
 /* #gnb .gnbListBox {display:block;background} */
 #gnb .gnbListBox > ul {padding:15px 0;}
 #gnb .gnbListBox > ul > li {padding:0 25px;}
+#gnb .gnbListBox > ul > li > a,
 #gnb .gnbListBox > ul > li > button {display:block;position:relative;box-sizing:border-box;width:100%;padding:10px;font-size:14px;font-weight:500;color:#fff;text-align:left;border-top:1px solid #515d6e;}
 #gnb .gnbListBox > ul > li:first-child > button {border-top:none;}
 #gnb .gnbListBox > ul > li > button:after {display:block;content:"";position:absolute;right:10px;top:50%;width:5px;height:5px;border-left:1px solid #949ca6;border-top:1px solid #949ca6;transform:translate(0, -50%) rotate(-135deg);}

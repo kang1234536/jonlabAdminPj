@@ -1,13 +1,12 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, {forwardRef} from 'react';
+// import {forwardR} from 'react-router-dom';
 import Swiper from 'swiper';
 import PropTypes from 'prop-types';
 
-const swiperCompt = ({children}) => {
+const swiperCompt = forwardRef(({children}) => {
 	
 
-	useEffect(()=>{
-		
-	}, [activeIndex]);
+	
 
 	return (
 		<div className="swiperWrap" ref={swiperWrap}>
@@ -18,13 +17,10 @@ const swiperCompt = ({children}) => {
 			</div>
 		</div>
 	);
-}
+});
 
-// TabswiperComptCmpt.propTypes = {
-// 	tabName : PropTypes.array.isRequired,
-// 	children : PropTypes.any.isRequired,
-// 	setViewBox : PropTypes.func.isRequired,
-// 	setIndex : PropTypes.number,
-// }
+swiperCompt.propTypes = {
+	children : PropTypes.node.isRequired,
+}
 
 export default swiperCompt;

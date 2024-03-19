@@ -5,8 +5,8 @@ import RegFoldItemBox from 'ui_component/regist_folding_box';
 import Checkbox from 'ui_component/checkbox';
 import Radiobox from 'ui_component/radiobox';
 import RadioButtonBox from 'ui_component/radiobuttonbox';
-import InputTxt from 'ui_component/input_txt';
-import InputNum from 'ui_component/input_num';
+// import InputTxt from 'ui_component/input_txt';
+// import InputNum from 'ui_component/input_num';
 import PeriodSett from 'ui_component/period_setting';
 import Buttons from 'ui_component/buttons';
 
@@ -173,7 +173,7 @@ const FormItem = () => {
 				title={'input text box style'}
 				// helpTip={true}
 			>
-				<InputTxt
+				{/* <InputTxt
 					ver={'inptxtItem02'}
 					// minLeng={0}
 					// maxLeng={5}
@@ -190,7 +190,7 @@ const FormItem = () => {
 
 				<InputNum
 					unit={'원'}
-				/>
+				/> */}
 			</RegFoldItemBox>
 
 			<RegFoldItemBox

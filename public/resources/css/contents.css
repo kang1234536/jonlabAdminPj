@@ -17,6 +17,13 @@
 .btnItemL03, a.btnItemL03 {border:1px solid #697185;background-color:#697185}
 .btnItemL03 span {color:#fff;}
 
+[class^="btnTiny"], a[class^="btnTiny"] {display:inline-block;box-sizing:border-box;padding:0 6px;text-align:center;font-size:12px;border:1px solid #dbdde2;background-color:#fff;vertical-align:middle;}
+[class^="btnTiny"] span {display:block;padding:2px 0 0;line-height:18px;} 
+.btnTiny02, a.btnTiny02 {border:1px solid #0035bd;background-color:#0035bd}
+.btnTiny02 span {color:#fff;}
+.btnTiny03, a.btnTiny03 {border:1px solid #697185;background-color:#697185}
+.btnTiny03 span {color:#fff;}
+
 /* ico fold buttons */
 [class^="btnFold"] {display:block;width:30px;height:30px;background-image:url('../images/btn_folding.gif');background-repeat:no-repeat;background-position: center bottom;background-size:30px auto;}
 [class^="btnFold"].active {background-position:center top;}
@@ -209,7 +216,7 @@
 [class^="nodata"] {padding:50px 10px;}
 [class^="nodata"] .tit {display:block;padding:70px 0 0;line-height:20px;font-size:16px;text-align:center !important;background:url('../images/ico_nodata.gif') no-repeat center top;background-size:50px;}
 
-/* tab box */
+/* tab */
 [class^="tabListWrap"] {margin:0 -20px;}
 [class^="tabListWrap"] [class^="tabListInner"] {overflow-x:auto;overflow-y:hidden;}
 [class^="tabListWrap"] [class^="tabListInner"]::-webkit-scrollbar {display:none;}
@@ -217,12 +224,6 @@
 [class^="tabListWrap"] .tabItems .tabItem {position:relative;}
 [class^="tabListWrap"] .tabItems .tabItem button {width:100%;padding:20px 0;white-space:nowrap;}
 [class^="tabListWrap"] .tabItems .tabItem span {display:inline-block;padding:5px 20px;line-height:20px;font-size:16px;}
-/* [class^="tabListWrap"] .tabItems .tabItem .swiper-slide {position:relative;}
-[class^="tabListWrap"] .tabItems .tabItem .swiper-slide:after {display:block;content:"";position:absolute;left:-1px;top:50%;width:1px;height:10px;margin:-5px 0 0;background-color:#dbdde2}
-[class^="tabListWrap"] .tabItems .tabItem .swiper-slide button {width:100%;padding:20px 0;}
-[class^="tabListWrap"] .tabItems .tabItem .swiper-slide button span {display:inline-block;padding:5px 20px;line-height:20px;font-size:16px;}
-[class^="tabListWrap"] .tabItems .tabItem .swiper-slide.active button span{position:relative;color:#0035bd;}
-[class^="tabListWrap"] .tabItems .tabItem .swiper-slide.active button span:after {display:block;content:"";position:absolute;left:20px;right:20px;bottom:0;height:2px;background-color:#0035bd;} */
 
 [class^="tabPanelWrap"] {display:block;margin:20px 20px 0;}
 
@@ -233,13 +234,6 @@
 [class^="cateListWrap"] .cateItemBox .cateItemCase li button {position:relative;width:100%;height:34px;padding:0 10px;font-size:12px;text-align:left;}
 [class^="cateListWrap"] .cateItemBox .cateItemCase li button:after {display:block;content:"";position:absolute;right:10px;top:50%;width:4px;height:4px;border-top:1px solid #9199ac;border-right:1px solid #9199ac;transform:translate(0, -50%) rotate(45deg);transform-origin:50%;}
 [class^="cateListWrap"] .cateItemBox .cateItemCase li:hover button {color:#0035bd;background-color:#f8f9fd;}
-
-/**************************************************************************************
-** react-id-swiper default style setting
-**************************************************************************************/
-[class^="cmptSwiper"] .swiper-container {overflow:hidden;}
-[class^="cmptSwiper"] .swiper-wrapper {overflow:hidden;position:relative;width:10000em;}
-[class^="cmptSwiper"] .swiper-wrapper .swiper-slide {float:left;}
 
 /**************************************************************************************
 ** Layer Popup
@@ -254,19 +248,13 @@
 
 [class^="layerWrap"].open [class^="layerBox"] {opacity:1;}
 
-/* [class^="layerWrap"] .layerConts {padding:20px;}
-[class^="layerWrap"] [class^="btnCloseLayer"] {position:absolute;right:10px;top:6px;width:40px;height:40px;}
-[class^="layerWrap"] [class^="btnCloseLayer"]:before {display:block;content:"";position:absolute;left:50%;top:50%;width:30px;height:2px;background-color:#fff;transform:translate(-50%, -50%) rotate(45deg);}
-[class^="layerWrap"] [class^="btnCloseLayer"]:after {display:block;content:"";position:absolute;left:50%;top:50%;width:30px;height:2px;background-color:#fff;transform:translate(-50%, -50%) rotate(-45deg);}
-[class^="layerWrap"] [class^="btnCloseLayer"] em {display:block;overflow:hidden;width:0;height:0;line-height:0;} */
-
 /**************************************************************************************
 ** Login
 **************************************************************************************/
 .loginWrap {width:320px;margin:120px auto 0;}
 .loginWrap .loginBox .rowCase {display:flex;justify-content:space-between;margin:12px 0 0;}
 .loginWrap .loginBox .rowCase:first-child {margin:0;}
-.loginWrap .loginBox .rowCase .tit {flex-shrink:0;width:50px;line-height:50px;}
+.loginWrap .loginBox .rowCase .tit {flex-shrink:0;width:50px;line-height:50px;font-size:18px;}
 .loginWrap .loginBox .rowCase .inpLogin {width:100%;}
 .loginWrap .loginBox .rowCase .inpLogin input {box-sizing:border-box;width:100%;height:50px;font-size:16px;border:1px solid #ccc;border-radius:12px;}
 

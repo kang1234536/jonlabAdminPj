@@ -17,7 +17,7 @@ import FormItem from 'guide/FormItem';
 import TableItem from 'guide/TableItem';
 import TabItem from 'guide/TabItem';
 import RegTemplate from 'guide/register_box_template';
-import PrdReg from 'page/prdReg';
+import PjtBoard from 'page/pjtBoard';
 import PopupSample01 from 'guide/popup/popupSample01';
 
 const RouterSet = () => {
@@ -37,7 +37,7 @@ const RouterSet = () => {
 					<Route path="/form_item" element={!loginYn ? <Navigate to="/login" replace /> :<FormItem />} />
 					<Route path="/table_item" element={!loginYn ? <Navigate to="/login" replace /> :<TableItem />} />
 					<Route path="/tab_item" element={!loginYn ? <Navigate to="/login" replace /> :<TabItem />} />
-					<Route path="/regPrd" element={!loginYn ? <Navigate to="/login" replace /> :<PrdReg />} />
+					<Route path="/pjtBoard" element={!loginYn ? <Navigate to="/login" replace /> :<PjtBoard />} />
 					<Route path="/PopupSample01" element={!loginYn ? <Navigate to="/login" replace /> :<PopupSample01 />} />
 					<Route path="/login" element={!loginYn ? <Login /> : <Navigate to="/" replace />} />
 					<Route path="*" element={<Navigate to="/" replace />}  />

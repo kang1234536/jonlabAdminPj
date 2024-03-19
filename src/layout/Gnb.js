@@ -103,12 +103,13 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<button type="button" onClick={subDepthClick}>상품관리</button>
+							<Link to="pjtBoard">프로젝트</Link>
+							{/* <button type="button" onClick={subDepthClick}>프로젝트</button>
 							<div className="depth02">
 								<ul>
-									<li><Link to="regPrd">상품등록</Link></li>
+									<li><Link to="regPrd">프로젝트</Link></li>
 								</ul>
-							</div>
+							</div> */}
 						</li>
 						<li>
 							<button type="button" onClick={subDepthClick}>depth03</button>
