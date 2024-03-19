@@ -259,3 +259,17 @@
 [class^="layerWrap"] [class^="btnCloseLayer"]:before {display:block;content:"";position:absolute;left:50%;top:50%;width:30px;height:2px;background-color:#fff;transform:translate(-50%, -50%) rotate(45deg);}
 [class^="layerWrap"] [class^="btnCloseLayer"]:after {display:block;content:"";position:absolute;left:50%;top:50%;width:30px;height:2px;background-color:#fff;transform:translate(-50%, -50%) rotate(-45deg);}
 [class^="layerWrap"] [class^="btnCloseLayer"] em {display:block;overflow:hidden;width:0;height:0;line-height:0;} */
+
+/**************************************************************************************
+** Login
+**************************************************************************************/
+.loginWrap {width:320px;margin:120px auto 0;}
+.loginWrap .loginBox .rowCase {display:flex;justify-content:space-between;margin:12px 0 0;}
+.loginWrap .loginBox .rowCase:first-child {margin:0;}
+.loginWrap .loginBox .rowCase .tit {flex-shrink:0;width:50px;line-height:50px;}
+.loginWrap .loginBox .rowCase .inpLogin {width:100%;}
+.loginWrap .loginBox .rowCase .inpLogin input {box-sizing:border-box;width:100%;height:50px;font-size:16px;border:1px solid #ccc;border-radius:12px;}
+
+.loginWrap .loginBtnBox {display:flex;margin:20px 0 0;}
+.loginWrap .loginBtnBox > div {width:100%;}
+.loginWrap .loginBtnBox > div button {width:100%;}

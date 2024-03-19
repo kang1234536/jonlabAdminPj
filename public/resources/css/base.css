@@ -10,7 +10,7 @@ ul, ol, li{list-style:none}
 
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block; margin:0; padding:0;}
 
-body {font-size:14px; line-height:18px; font-weight:400; color:#333; font-family:'NotoSans','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif; -webkit-text-size-adjust: none;}
+body {font-size:14px; line-height:22px; font-weight:400; color:#333; font-family:'NotoSans','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif; -webkit-text-size-adjust: none;}
 
 pre, textarea, select {font-family:'NotoSans','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;}
 

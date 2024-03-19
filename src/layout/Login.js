@@ -28,23 +28,23 @@ const Login = () => {
 
 			<div className="loginBox">
 				<div className="rowCase">
-					<strong>ID</strong>
-					<div>
-						<input type="text" className="inpLogin" title="" />
+					<strong className="tit">ID</strong>
+					<div className="inpLogin">
+						<input type="text" title="아이디를 입력해주세요" />
 					</div>
 				</div>
 				
 				<div className="rowCase">
-					<strong>PW</strong>
-					<div>
-						<input type="text" className="inpLogin" title="" />
+					<strong className="tit">PW</strong>
+					<div className="inpLogin">
+						<input type="text" title="비밀번호를 입력해주세요" />
 					</div>
 				</div>
 			</div>
 
 			<div className="loginBtnBox">
 				<div>
-					<Buttons name="btnItem" txt="LOGIN" clickCall={loginClickFn} />
+					<Buttons name="btnItemL02" txt="LOGIN" clickCall={loginClickFn} />
 				</div>
 			</div>
 
