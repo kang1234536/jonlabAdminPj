@@ -23,9 +23,9 @@ import PopupSample01 from 'guide/popup/popupSample01';
 const RouterSet = () => {
 	const {loginYn} = useContext(GState);
 
-	useEffect(()=>{
-		console.log('useEffect ========= RouterSet');
-	}, [loginYn]);
+	// useEffect(()=>{
+	// 	console.log('useEffect ========= RouterSet');
+	// }, [loginYn]);
 
 	return (
 		<BRouter>

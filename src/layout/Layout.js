@@ -6,31 +6,20 @@ import Gnb from 'layout/Gnb';
 import Footer from 'layout/Footer';
 
 const Layout = ({loginYn, children}) => {
-	
+
 	return (
 		<>
-			{loginYn &&
-				<>
-					<Header />
-					<Gnb />
-					<div id="container">
-
-						{children}
-
-					</div>
-					<Footer />
-				</>
-			}
-
-			{!loginYn &&
-				<>
-					<Header />
-					<div id="container">
-						{children}
-					</div>
-					<Footer />
-				</>
-			}
+			<Header />
+			
+			{loginYn && <Gnb />}
+			
+			<div id="container">
+				<div className="contents">
+					{children}
+				</div>
+			</div>
+			
+			<Footer />
 		</>
 	);
 }

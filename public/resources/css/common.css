@@ -29,14 +29,14 @@
 [class^="btnFold"].active {background-position:center top;}
 
 /* input style */
-[class^="inptxtItem"] {display:inline-block;box-sizing:border-box;position:relative;padding:0 70px 0 0;border:1px solid #dbdde2;background-color:#efefef;}
+[class^="inptxtItem"] {display:inline-block;box-sizing:border-box;position:relative;padding:0;border:1px solid #dbdde2;}
 [class^="inptxtItem"] input[type="text"] {box-sizing:border-box;width:100%;height:32px;padding:0 10px;font-size:14px;border:none;outline:none;background-color:transparent;appearance:none;-webkit-appearance:none;}
-[class^="inptxtItem"] .limitLength {display:block;overflow:hidden;position:absolute;right:0;top:0;width:60px;padding:2px 5px 0;line-height:30px;font-size:10px;text-align:center;border-left:1px solid #dbdde2;}
+/* [class^="inptxtItem"] .limitLength {display:block;overflow:hidden;position:absolute;right:0;top:0;width:60px;padding:2px 5px 0;line-height:30px;font-size:10px;text-align:center;border-left:1px solid #dbdde2;}
 [class^="inptxtItem"] .limitLength em {display:inline-block;font-weight:500;color:#3772ea;vertical-align:top;}
-[class^="inptxtItem"] .limitLength span {display:inline-block;vertical-align:top;}
+[class^="inptxtItem"] .limitLength span {display:inline-block;vertical-align:top;} */
 [class^="inptxtItem"].focus {background-color:#fff;}
-.inptxtItem02 {padding:0;}
-.inptxtItem02 .limitLength {display:none;}
+/* .inptxtItem02 {padding:0;} */
+/* .inptxtItem02 .limitLength {display:none;} */
 
 [class^="inpNumItem"] {display:inline-block;box-sizing:border-box;position:relative;padding:0 70px 0 0;border:1px solid #dbdde2;background-color:#efefef;}
 [class^="inpNumItem"] input[type="tel"],
@@ -234,6 +234,10 @@
 [class^="cateListWrap"] .cateItemBox .cateItemCase li button {position:relative;width:100%;height:34px;padding:0 10px;font-size:12px;text-align:left;}
 [class^="cateListWrap"] .cateItemBox .cateItemCase li button:after {display:block;content:"";position:absolute;right:10px;top:50%;width:4px;height:4px;border-top:1px solid #9199ac;border-right:1px solid #9199ac;transform:translate(0, -50%) rotate(45deg);transform-origin:50%;}
 [class^="cateListWrap"] .cateItemBox .cateItemCase li:hover button {color:#0035bd;background-color:#f8f9fd;}
+
+/* 화면 상단 검색 박스 */
+[class^="srchWrap"] {padding:20px;border:2px solid #000;border-radius:12px;}
+[class^="srchWrap"] [class^="srchRow"] {display:flex;}
 
 /**************************************************************************************
 ** Layer Popup

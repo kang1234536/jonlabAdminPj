@@ -1,14 +1,19 @@
 import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 
-import {GState} from 'Router/GState';
+import {GState, userLogoutFn} from 'Router/GState';
 import Buttons from 'ui_component/buttons';
 
 const Header = () => {
 	const {loginYn, setLoginYn} = useContext(GState);
 
 	const logoutClickFn = (e)=>{
-		setLoginYn(false);
+		userLogoutFn({
+			success : ()=>{
+				setLoginYn(false);
+				localStorage.setItem('logginYn', 'false');
+			}
+		})
 	}
 
 	return (

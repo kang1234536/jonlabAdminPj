@@ -1,18 +1,24 @@
 import React, {useEffect, useContext} from 'react';
 
 
-import {GState} from 'Router/GState';
+import {GState, userLoginFn} from 'Router/GState';
 import Buttons from 'ui_component/buttons';
 
 
 
 const Login = () => {
 	const rootEl = document.querySelector('#root');
-	let {loginYn, setLoginYn} = useContext(GState);
+	let {setLoginYn} = useContext(GState);
 	
 	const loginClickFn = (e)=>{
 		console.log('loginClickFn =========== ');
-		setLoginYn(true);
+		userLoginFn({
+			success : ()=>{
+				setLoginYn(true);
+				localStorage.setItem('logginYn', 'true');
+			}
+		})
+		// localStorage.setItem('logginYn', 'true');
 	}
 
 	useEffect(()=>{
