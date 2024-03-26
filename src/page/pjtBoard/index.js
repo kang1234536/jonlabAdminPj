@@ -11,28 +11,35 @@ const PjtBoard = () => {
 		<div className="srchWrap">
 			<div className="srchInner">
 				<div className="srchBox">
+
 					<div className="srchRow">
-						<div className="tit">
-							<strong>제목</strong>
-						</div>
-						<div className="cont">
-							<InputTxt
-								inpType="text"
-								inpTitle="제목을 입력해주세요"
-							/>
+						<div className="col">
+							<div className="tit">
+								<strong>제목</strong>
+							</div>
+							<div className="cont">
+								<InputTxt
+									inpType="text"
+									inpTitle="제목을 입력해주세요"
+								/>
+							</div>
 						</div>
 					</div>
+
 					<div className="srchRow">
-						<div className="tit">
-							<strong>키워드</strong>
-						</div>
-						<div className="cont">
-							<InputTxt
-								inpType="text"
-								inpTitle="키워드를 입력해주세요"
-							/>
+						<div className="col">
+							<div className="tit">
+								<strong>키워드</strong>
+							</div>
+							<div className="cont">
+								<InputTxt
+									inpType="text"
+									inpTitle="키워드를 입력해주세요"
+								/>
+							</div>
 						</div>
 					</div>
+					
 				</div>
 
 				<div className="srchBtnBox">

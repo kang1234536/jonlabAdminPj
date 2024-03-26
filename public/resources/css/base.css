@@ -75,8 +75,8 @@ noscript p {margin:0;}
 
 /* font weight */
 .bold4 {font-weight:400 !important;}
+.bold5 {font-weight:500 !important;}
 .bold7 {font-weight:700 !important;}
-.bold8 {font-weight:800 !important;}
 
 /*****************************
 	@font -face
@@ -108,7 +108,7 @@ noscript p {margin:0;}
 @font-face {
   font-family: "NotoSans";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   src:
 	url("../fonts/NotoSansKR-Medium.woff2") format("woff2"),
 	url("../fonts/NotoSansKR-Medium.otf") format("truetype");
@@ -116,7 +116,7 @@ noscript p {margin:0;}
 @font-face {
   font-family: "NotoSans";
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   src:
 	url("../fonts/NotoSansKR-Bold.woff2") format("woff2"),
 	url("../fonts/NotoSansKR-Bold.otf") format("truetype");

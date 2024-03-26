@@ -210,7 +210,7 @@
 [class^="viewWrap"] [class^="subViewBox"] > ul > li.total > .tit {color:#3772ea;}
 [class^="viewWrap"] [class^="subViewBox"] > ul > li.total > .cont {color:#3772ea;}
 [class^="viewWrap"] [class^="subViewBox"] > ul > li.total .price {line-height:34px;}
-[class^="viewWrap"] [class^="subViewBox"] > ul > li.total .price em {display:inline-block;font-size:18px;font-weight:700;}
+[class^="viewWrap"] [class^="subViewBox"] > ul > li.total .price em {display:inline-block;font-size:18px;font: weight 500;}
 
 /* nodata */
 [class^="nodata"] {padding:50px 10px;}
@@ -237,7 +237,18 @@
 
 /* 화면 상단 검색 박스 */
 [class^="srchWrap"] {padding:20px;border:2px solid #000;border-radius:12px;}
-[class^="srchWrap"] [class^="srchRow"] {display:flex;}
+[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] {display:flex;margin:12px 0 0;}
+[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"]:first-child {margin:0;}
+[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"]:only-child {width:100%;}
+[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] {display:flex;align-items:center;}
+[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"]:only-child {width:100%;}
+[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] [class^="tit"] {box-sizing:border-box;min-width:70px;padding:0 10px;font-weight:500;color:#777;}
+[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] [class^="tit"]:first-child {padding:0 10px 0 0;}
+[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] [class^="tit"] strong {font-weight:500;}
+
+[class^="srchWrap"] [class^="srchBtnBox"] {display:flex;justify-content:center;margin:20px 0 0;}
+[class^="srchWrap"] [class^="srchBtnBox"] > div {margin:0 10px 0 0;}
+[class^="srchWrap"] [class^="srchBtnBox"] > div:last-child {margin:0;}
 
 /**************************************************************************************
 ** Layer Popup
