@@ -7,10 +7,10 @@ const Main = () => {
 	
 	
 	
-	return (
+	return ( 
 		<>
 		<div className="contents">
-			Main
+			Main 
 		</div>
 		</>
 	);
