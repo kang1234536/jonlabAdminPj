@@ -10,7 +10,7 @@ const Main = () => {
 	return ( 
 		<>
 		<div className="contents">
-			Main 
+			Main  
 		</div>
 		</>
 	);
