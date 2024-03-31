@@ -1,4 +1,3 @@
-
 import React, {useEffect, useContext, useState} from 'react';
 import { useQuery, useMutation,  NetworkStatus} from "@apollo/client";
 import * as GQL from "apollo/user/user";
@@ -37,24 +36,31 @@ const Login = () => {
 	);
 		
 	const loginClickFn = (e)=>{
-		console.log('loginClickFn =========== ');
-		
-		if(data != undefined) {
-			console.log('loginClickFn =========== ' + data.COM_USER_INFO);
-			if (data.COM_USER_INFO.length == 1) {
-				setUserInfo(data.COM_USER_INFO);
-				userLoginFn({
-					success : ()=>{
-						setLoginYn(true);
-						localStorage.setItem('logginYn', 'true');
-					}
-				})
-			}	else {
-				alert('로그인실패');
+		userLoginFn({
+			success : ()=>{
+				setLoginYn(true);
+				localStorage.setItem('logginYn', 'true');
 			}
-		}	else {
-			alert('로그인실패');
-		}
+		})
+		// if(data != undefined) {
+		// 	console.log('loginClickFn =========== ' + data.COM_USER_INFO);
+		// 	if (data.COM_USER_INFO.length == 1) {
+		// 		// setUserInfo(data.COM_USER_INFO);  
+		// 		setUserInfo(data.COM_USER_INFO);
+		// 		userLoginFn({
+		// 			success : ()=>{
+		// 				setLoginYn(true);
+		// 				localStorage.setItem('logginYn', 'true');
+		// 			}
+		// 		})
+		// 	}	else {
+		// 		alert('로그인실패');
+		// 	}
+		// }	else {
+		// 	alert('로그인실패');
+		// }
+		
+		// localStorage.setItem('logginYn', 'true');
 	}
 
 	useEffect(()=>{

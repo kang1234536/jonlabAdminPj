@@ -165,22 +165,22 @@
 [class^="fixedBtnBox"] .btnR {float:right;}
 [class^="fixedBtnBox"] [class^="btnItemL"] + [class^="btnItemL"] {margin:0 0 0 5px;}
 
+/* list bar */
+[class^="inquiryInfoWrap"] {margin:30px 0 15px;}
+[class^="inquiryInfoWrap"] .total .num {font-weight:700;color:#d71921;}
+
 /* list table style */
-[class^="tblWrap"] {overflow-y:hidden;overflow-x:auto;width:100%;text-align:left;border:1px solid #dbdde2;}
-[class^="tblWrap"] .tl {text-align:left !important;}
-[class^="tblWrap"] .tc {text-align:center !important;}
-[class^="tblWrap"] .tr {text-align:right !important;}
+[class^="tblWrap"] {overflow-y:hidden;overflow-x:auto;width:100%;text-align:left;}
 [class^="tblWrap"] table {min-width:100%;border-collapse:collapse;}
 [class^="tblWrap"] table caption {display:block;overflow:hidden;width:0;height:0;line-height:0;}
-[class^="tblWrap"] table thead {background-color:#aed4ff;}
-[class^="tblWrap"] table thead tr th {padding:10px;line-height:20px;font-size:14px;border:1px solid #dbdde2;border-top:none;border-right:none;}
+[class^="tblWrap"] table thead {background-color:#000;}
+[class^="tblWrap"] table thead tr th {padding:10px;line-height:20px;font-size:14px;font-weight:500;color:#fff;text-align:center;border:1px solid #000;}
 [class^="tblWrap"] table thead tr th:first-child {border-left:none;}
-[class^="tblWrap"] table tbody tr td {padding:10px;line-height:20px;font-size:12px;border:1px solid #dbdde2;border-right:none;white-space:nowrap;}
+[class^="tblWrap"] table thead + tbody tr td {text-align:center;}
+[class^="tblWrap"] table tbody tr td {padding:10px;line-height:20px;font-size:12px;border:1px solid #dbdde2;}
 [class^="tblWrap"] table tbody tr td:first-child {border-left:none;}
-[class^="tblWrap"] table tbody tr:last-child td {border-bottom:none;}
+[class^="tblWrap"] table tbody tr td:last-child {border-right:none;}
 
-[class^="tblWrap_tc"] {text-align:center;}
-[class^="tblWrap_tr"] {text-align:right;}
 
 /* view and regist table */
 [class^="viewTblWrap"] {width:100%;}
@@ -236,19 +236,19 @@
 [class^="cateListWrap"] .cateItemBox .cateItemCase li:hover button {color:#0035bd;background-color:#f8f9fd;}
 
 /* 화면 상단 검색 박스 */
-[class^="srchWrap"] {padding:20px;border:2px solid #000;border-radius:12px;}
-[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] {display:flex;margin:12px 0 0;}
-[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"]:first-child {margin:0;}
-[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"]:only-child {width:100%;}
-[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] {display:flex;align-items:center;}
-[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"]:only-child {width:100%;}
-[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] [class^="tit"] {box-sizing:border-box;min-width:70px;padding:0 10px;font-weight:500;color:#777;}
-[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] [class^="tit"]:first-child {padding:0 10px 0 0;}
-[class^="srchWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] [class^="tit"] strong {font-weight:500;}
+[class^="srcInqhWrap"] {margin:0 0 40px;padding:20px;border:2px solid #000;border-radius:12px;}
+[class^="srcInqhWrap"] [class^="srchBox"] [class^="srchRow"] {display:flex;margin:12px 0 0;}
+[class^="srcInqhWrap"] [class^="srchBox"] [class^="srchRow"]:first-child {margin:0;}
+[class^="srcInqhWrap"] [class^="srchBox"] [class^="srchRow"]:only-child {width:100%;}
+[class^="srcInqhWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] {display:flex;align-items:center;}
+[class^="srcInqhWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"]:only-child {width:100%;}
+[class^="srcInqhWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] [class^="tit"] {box-sizing:border-box;min-width:70px;padding:0 10px;font-weight:500;color:#777;}
+[class^="srcInqhWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] [class^="tit"]:first-child {padding:0 10px 0 0;}
+[class^="srcInqhWrap"] [class^="srchBox"] [class^="srchRow"] > [class^="col"] [class^="tit"] strong {font-weight:500;}
 
-[class^="srchWrap"] [class^="srchBtnBox"] {display:flex;justify-content:center;margin:20px 0 0;}
-[class^="srchWrap"] [class^="srchBtnBox"] > div {margin:0 10px 0 0;}
-[class^="srchWrap"] [class^="srchBtnBox"] > div:last-child {margin:0;}
+[class^="srcInqhWrap"] [class^="srchBtnBox"] {display:flex;justify-content:center;margin:20px 0 0;}
+[class^="srcInqhWrap"] [class^="srchBtnBox"] > div {margin:0 10px 0 0;}
+[class^="srcInqhWrap"] [class^="srchBtnBox"] > div:last-child {margin:0;}
 
 /**************************************************************************************
 ** Layer Popup
