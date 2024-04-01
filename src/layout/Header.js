@@ -8,12 +8,8 @@ const Header = () => {
 	const {loginYn, setLoginYn} = useContext(GState);
 
 	const logoutClickFn = (e)=>{
-		userLogoutFn({
-			success : ()=>{
-				setLoginYn(false);
-				localStorage.setItem('logginYn', 'false');
-			}
-		})
+		setLoginYn(false);
+		localStorage.setItem('logginYn', 'false');
 	}
 
 	return (

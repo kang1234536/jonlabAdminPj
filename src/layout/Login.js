@@ -1,51 +1,59 @@
-import React, {useEffect, useContext, useState} from 'react';
-import { useQuery, useMutation,  NetworkStatus} from "@apollo/client";
-import * as GQL from "apollo/user/user";
-import {GState, userLoginFn} from 'Router/GState';
+
+import React, {useEffect, useContext, useRef} from 'react';
+import { useQuery } from "@apollo/client";
+import {QL_LOGIN} from "apollo/user/user";
+import {GState} from 'Router/GState';
 import Buttons from 'ui_component/buttons';
-
-
 
 const Login = () => {
 	const rootEl = document.querySelector('#root');
 	let {setLoginYn} = useContext(GState);
-	
-	const [idValue, setId] = useState('');
-	const [pwValue, setPw] = useState('');
-	const [userInfo , setUserInfo] = useState('');
 
-	const saveUserId = event => {
-		setId(event.target.value);
-	};
+	const inpID = useRef(null);
+	const inpPW = useRef(null);
 	
-	  const saveUserPw = event => {
-		setPw(event.target.value);
-	};
+	// const [idValue, setId] = useState('');
+	// const [pwValue, setPw] = useState('');
+	// const [userInfo , setUserInfo] = useState('');
 
-	const { loading, error, data, networkStatus,  refetch } = useQuery(GQL.Login, {
-		variables: {
-			user_id : idValue,
-			user_pw : pwValue
-			}
-		},
-		{  
-			 enabled: false, 
-			 notifyOnNetworkStatusChange: true,
-			 fetchPolicy: "network-only"
-		},
-	);
-		
+	// const saveUserId = event => {
+	// 	setId(event.target.value);
+	// };
+	
+	// const saveUserPw = event => {
+	// 	setPw(event.target.value);
+	// };
+
+	// const { loading, error, data } = useQuery(QL_LOGIN, {
+	// 	variables: {
+	// 		user_id : 'kha0202',
+	// 		user_pw : '1234'
+	// 	}
+	// });
+
 	const loginClickFn = (e)=>{
-		userLoginFn({
-			success : ()=>{
-				setLoginYn(true);
-				localStorage.setItem('logginYn', 'true');
-			}
-		})
+		console.log('loginClickFn =========== ');
+		setLoginYn(true);
+		localStorage.setItem('logginYn', 'true');
+
+
+		// const {data} = getUserMutat({
+		// 	variables: {
+		// 		user_id : 'kha0202',
+		// 		user_pw : '1234'
+		// 	}
+		// });
+		// var {data} = getUserMutat();
+		// userLoginFn({
+		// 	success : ()=>{
+		// 		setLoginYn(true);
+		// 		localStorage.setItem('logginYn', 'true');
+		// 	}
+		// })
+		
 		// if(data != undefined) {
 		// 	console.log('loginClickFn =========== ' + data.COM_USER_INFO);
 		// 	if (data.COM_USER_INFO.length == 1) {
-		// 		// setUserInfo(data.COM_USER_INFO);  
 		// 		setUserInfo(data.COM_USER_INFO);
 		// 		userLoginFn({
 		// 			success : ()=>{
@@ -59,12 +67,14 @@ const Login = () => {
 		// }	else {
 		// 	alert('로그인실패');
 		// }
-		
-		// localStorage.setItem('logginYn', 'true');
 	}
 
 	useEffect(()=>{
-		rootEl.classList.add('loginPage');
+		inpID.current.value = 'kha0202';
+		inpPW.current.value = '1234';
+		console.log(inpID.current.value);
+		console.log(inpPW.current.value);
+		if(!rootEl.classList.contains('loginPage')) rootEl.classList.add('loginPage');
 
 		return()=>{
 			rootEl.classList.remove('loginPage');
@@ -78,14 +88,16 @@ const Login = () => {
 				<div className="rowCase">
 					<strong className="tit">ID</strong>
 					<div className="inpLogin">
-						<input type="text" title="아이디를 입력해주세요" value={idValue} onChange={saveUserId}/>
+						<input type="text" title="아이디를 입력해주세요" ref={inpID}/>
+						{/* <input type="text" title="아이디를 입력해주세요" value={idValue} onChange={saveUserId}/> */}
 					</div>
 				</div>
 				
 				<div className="rowCase">
 					<strong className="tit">PW</strong>
 					<div className="inpLogin">
-						<input type="text" title="비밀번호를 입력해주세요" value={pwValue} onChange={saveUserPw}/>
+						<input type="text" title="비밀번호를 입력해주세요" ref={inpPW}/>
+						{/* <input type="text" title="비밀번호를 입력해주세요" value={pwValue} onChange={saveUserPw}/> */}
 					</div>
 				</div>
 			</div>
