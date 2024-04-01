@@ -70,10 +70,6 @@ const Login = () => {
 	}
 
 	useEffect(()=>{
-		inpID.current.value = 'kha0202';
-		inpPW.current.value = '1234';
-		console.log(inpID.current.value);
-		console.log(inpPW.current.value);
 		if(!rootEl.classList.contains('loginPage')) rootEl.classList.add('loginPage');
 
 		return()=>{
