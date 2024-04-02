@@ -1,6 +1,5 @@
 
 import React, {useEffect, useContext, useRef} from 'react';
-import { useQuery } from "@apollo/client";
 import {QL_LOGIN} from "apollo/user/user";
 import {GState} from 'Router/GState';
 import Buttons from 'ui_component/buttons';
@@ -12,63 +11,30 @@ const Login = () => {
 	const inpID = useRef(null);
 	const inpPW = useRef(null);
 	
-	// const [idValue, setId] = useState('');
-	// const [pwValue, setPw] = useState('');
-	// const [userInfo , setUserInfo] = useState('');
-
-	// const saveUserId = event => {
-	// 	setId(event.target.value);
-	// };
-	
-	// const saveUserPw = event => {
-	// 	setPw(event.target.value);
-	// };
-
-	// const { loading, error, data } = useQuery(QL_LOGIN, {
-	// 	variables: {
-	// 		user_id : 'kha0202',
-	// 		user_pw : '1234'
-	// 	}
-	// });
+	let {client} = useContext(GState);
 
 	const loginClickFn = (e)=>{
 		console.log('loginClickFn =========== ');
-		setLoginYn(true);
-		localStorage.setItem('logginYn', 'true');
 
-
-		// const {data} = getUserMutat({
-		// 	variables: {
-		// 		user_id : 'kha0202',
-		// 		user_pw : '1234'
-		// 	}
-		// });
-		// var {data} = getUserMutat();
-		// userLoginFn({
-		// 	success : ()=>{
-		// 		setLoginYn(true);
-		// 		localStorage.setItem('logginYn', 'true');
-		// 	}
-		// })
+		client.query({
+			query : QL_LOGIN,
+			variables: {
+						user_id : inpID.current.value,
+						user_pw : inpPW.current.value,
+			},
+			
+		}).then((data) => 	loginChkFn(data.data));
 		
-		// if(data != undefined) {
-		// 	console.log('loginClickFn =========== ' + data.COM_USER_INFO);
-		// 	if (data.COM_USER_INFO.length == 1) {
-		// 		setUserInfo(data.COM_USER_INFO);
-		// 		userLoginFn({
-		// 			success : ()=>{
-		// 				setLoginYn(true);
-		// 				localStorage.setItem('logginYn', 'true');
-		// 			}
-		// 		})
-		// 	}	else {
-		// 		alert('로그인실패');
-		// 	}
-		// }	else {
-		// 	alert('로그인실패');
-		// }
 	}
-
+	function loginChkFn(data) {
+		if (data.COM_USER_INFO.length == 1) {
+			alert('성공');
+			setLoginYn(true);
+			localStorage.setItem('logginYn', 'true');
+		}	else {
+			alert('실패');
+		}
+	} 
 	useEffect(()=>{
 		if(!rootEl.classList.contains('loginPage')) rootEl.classList.add('loginPage');
 
