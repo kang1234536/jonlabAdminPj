@@ -1,6 +1,6 @@
 
 import React, {useEffect, useContext, useRef} from 'react';
-import {QL_LOGIN} from "apollo/user/user";
+// import {QL_LOGIN} from "apollo/user/user";
 import {GState} from 'Router/GState';
 import Buttons from 'ui_component/buttons';
 
@@ -9,9 +9,12 @@ const Login = () => {
 	
 	let {setLoginYn} = useContext(GState);
 	let {client} = useContext(GState);
+	let {axios} = useContext(GState);
 
 	console.log(setLoginYn);
 	console.log(client);
+
+	
 
 	const inpID = useRef(null);
 	const inpPW = useRef(null);
@@ -20,26 +23,34 @@ const Login = () => {
 
 	const loginClickFn = (e)=>{
 		console.log('loginClickFn =========== ');
+		axios.post("/api",
+			{ 
+				user_id : inpID.current.value,
+				user_pw : inpPW.current.value,
+			}, 
+			 {header: {
+						// "Context-Type": "multipart/form-data",
+					},
+			}).then((res) => {
+									loginChkFn(res.data);
+							}
+					).catch((res) => {
+						// 실패했을 경우
+						console.error("실패 ", res);
+						}
+					);
+	};
 
-		client.query({
-			query : QL_LOGIN,
-			variables: {
-						user_id : inpID.current.value,
-						user_pw : inpPW.current.value,
-			},
-			
-		}).then((data) => 	loginChkFn(data.data));
-		
-	}
 	function loginChkFn(data) {
-		if (data.COM_USER_INFO.length == 1) {
+		if (data == null || data == "") {
+			alert('실패');
+		}	else {
 			alert('성공');
 			setLoginYn(true);
 			localStorage.setItem('logginYn', 'true');
-		}	else {
-			alert('실패');
 		}
 	} 
+
 	useEffect(()=>{
 		if(!rootEl.classList.contains('loginPage')) rootEl.classList.add('loginPage');
 
