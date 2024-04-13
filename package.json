@@ -7,7 +7,11 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.8",
+    "crypto": "^1.0.1",
     "graphql": "^16.8.1",
+    "http-proxy-middleware": "^3.0.0",
+    "jsonwebtoken": "^9.0.2",
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
     "react-datepicker": "^6.1.0",
@@ -17,9 +21,10 @@
     "react-scripts": "5.0.1",
     "simplebar": "^6.2.5",
     "simplebar-react": "^3.2.4",
+    "stream": "^0.0.2",
     "swiper": "^11.0.7",
     "web-vitals": "^2.1.4"
-  },  
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -43,5 +48,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "assert": "^2.1.0",
+    "buffer": "^6.0.3",
+    "crypto": "npm:crypto-browserify",
+    "crypto-browserify": "^3.12.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "proxy": "http//localhost:9090",
+    "react-app-rewired": "^2.2.1",
+    "stream": "npm:stream-browserify",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.3"
   }
 }

@@ -6,12 +6,17 @@ import Buttons from 'ui_component/buttons';
 
 const Login = () => {
 	const rootEl = document.querySelector('#root');
+	
 	let {setLoginYn} = useContext(GState);
+	let {client} = useContext(GState);
+
+	console.log(setLoginYn);
+	console.log(client);
 
 	const inpID = useRef(null);
 	const inpPW = useRef(null);
 	
-	let {client} = useContext(GState);
+	
 
 	const loginClickFn = (e)=>{
 		console.log('loginClickFn =========== ');
