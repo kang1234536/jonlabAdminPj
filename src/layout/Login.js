@@ -23,7 +23,7 @@ const Login = () => {
 
 	const loginClickFn = (e)=>{
 		console.log('loginClickFn =========== ');
-		axios.post("/api",
+		axios.post("/api/login2",
 			{ 
 				user_id : inpID.current.value,
 				user_pw : inpPW.current.value,
