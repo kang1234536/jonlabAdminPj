@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 
 import {GState, userLogoutFn} from 'Router/GState';
-import Buttons from 'ui_component/buttons';
+import Buttons from 'comUI/buttons/buttons';
 
 const Header = () => {
 	const {loginYn, setLoginYn} = useContext(GState);

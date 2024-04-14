@@ -1,6 +1,6 @@
 import React from 'react';
-import PageTitle from 'ui_component/page_title';
-import RegFoldItemBox from 'ui_component/regist_folding_box';
+import PageTitle from 'comUI/page_title';
+import RegFoldItemBox from 'comUI/regist_folding_box';
 
 const TableItem = () => {
 	

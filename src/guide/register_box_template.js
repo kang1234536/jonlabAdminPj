@@ -1,10 +1,10 @@
 import React, {useRef} from 'react';
-import PageTitle from 'ui_component/page_title';
-import RegFoldItemBox from 'ui_component/regist_folding_box';
-import InputTxt from 'ui_component/input_default';
-import InputNum from 'ui_component/input_num';
+import PageTitle from 'comUI/page_title';
+import RegFoldItemBox from 'comUI/regist_folding_box';
+// import InputTxt from 'ui_component/input_default';
+// import InputNum from 'ui_component/input_num';
 import Selectbox02 from 'ui_component/selectbox02';
-import Buttons from 'ui_component/buttons';
+import Buttons from 'comUI/buttons/buttons';
 
 
 const RegTemplate = () => {

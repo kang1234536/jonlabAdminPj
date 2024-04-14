@@ -1,8 +1,8 @@
 import React, {} from 'react';
 import {useNavigate} from 'react-router-dom';
 
-import Buttons from 'ui_component/buttons';
-import InputTxt from 'ui_component/inpTxt/inputTxt';
+import Buttons from 'comUI/buttons/buttons';
+import InputTxt from 'comUI/inpTxt/inputTxt';
 
 
 const PjtBoard = () => {

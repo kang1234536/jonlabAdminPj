@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tooltip from 'ui_component/Tooltip';
+import Tooltip from 'comUI/Tooltip';
 
 const PageTitle = ({title, essential_title, tooltip}) => {
 	return (

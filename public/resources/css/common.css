@@ -250,6 +250,13 @@
 [class^="srcInqhWrap"] [class^="srchBtnBox"] > div {margin:0 10px 0 0;}
 [class^="srcInqhWrap"] [class^="srchBtnBox"] > div:last-child {margin:0;}
 
+/* register */
+[class^="registWrap"] {margin:80px 0 0;}
+[class^="registWrap"] [class^="registTit"] {margin:40px 0 0;}
+[class^="registWrap"] [class^="registTit"]:first-child {margin:0;}
+[class^="registWrap"] [class^="registTit"] [class^="tit"] {display:inline-block;line-height:34px;font-size:24px;font-weight:400;vertical-align:middle;}
+[class^="registWrap"] [class^="registConts"] {margin:8px 0 0;}
+
 /**************************************************************************************
 ** Layer Popup
 **************************************************************************************/

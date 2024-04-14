@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Layer from 'layer';
-import Buttons from 'ui_component/buttons'
+import Buttons from 'comUI/buttons/buttons'
 
 
 const PopupSample01 = () => {

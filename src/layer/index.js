@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import LayerPortal from './LayerPortal';
-import Buttons from 'ui_component/buttons'
+import Buttons from 'comUI/buttons/buttons'
 
 const Layer = ({children, blindHeader, layerTitle, name, idName, setClose}) => {
 

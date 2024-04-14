@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useNavigate} from 'react';
 
-import Buttons from 'ui_component/buttons';
-import InputTxt from 'ui_component/inpTxt/inputTxt';
+import Buttons from 'comUI/buttons/buttons';
+import InputTxt from 'comUI/inpTxt/inputTxt';
 
 
 const PjtBoardDetail = () => {

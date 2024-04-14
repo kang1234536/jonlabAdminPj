@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import Tooltip from 'ui_component/Tooltip';
-import Buttons from 'ui_component/buttons';
+import Tooltip from 'comUI/Tooltip';
+import Buttons from 'comUI/buttons/buttons';
 import Layer from 'layer';
 
 const RegFoldItemBox = ({children, title, helpTip, tooltip, essential, closed}) => {

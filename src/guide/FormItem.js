@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import PageTitle from 'ui_component/page_title';
-import RegFoldItemBox from 'ui_component/regist_folding_box';
-import Checkbox from 'ui_component/checkbox';
-import Radiobox from 'ui_component/radiobox';
-import RadioButtonBox from 'ui_component/radiobuttonbox';
+import PageTitle from 'comUI/page_title';
+import RegFoldItemBox from 'comUI/regist_folding_box';
+import Checkbox from 'comUI/form/checkbox';
+import Radiobox from 'comUI/form/radiobox';
+import RadioButtonBox from 'comUI/radiobuttonbox';
 // import InputTxt from 'ui_component/input_txt';
 // import InputNum from 'ui_component/input_num';
-import PeriodSett from 'ui_component/period_setting';
-import Buttons from 'ui_component/buttons';
+import PeriodSett from 'comUI/period_setting';
+import Buttons from 'comUI/buttons/buttons';
 
 const FormItem = () => {
 	

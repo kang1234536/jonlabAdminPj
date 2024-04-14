@@ -1,10 +1,12 @@
 
 import React, {useEffect, useContext, useRef, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 // import {QL_LOGIN} from "apollo/user/user";
 import {GState} from 'Router/GState';
-import Buttons from 'ui_component/buttons';
+import Buttons from 'comUI/buttons/buttons';
 
 const Login = () => {
+	const navigate = useNavigate();
 	const rootEl = document.querySelector('#root');
 
 	let {setLoginYn} = useContext(GState);
@@ -18,26 +20,30 @@ const Login = () => {
 	const inpPW = useRef(null);
 	
 	const registerClickFn = (e) => {
-		console.log('registerClickFn =========== ');
-		axios.post("/api/register",
-			{ 
-				// user_id : inpID.current.value,
-				// user_pw : inpPW.current.value,
-				// 하드코딩 데이터
-				user_id : 'hyunh84',
-				user_pw : '1234'
-			}, 
-			 {header: {
-				// "Context-Type": "multipart/form-data",
-			},
-		}).then((res) => {
-			console.log('성공 ::: ' + JSON.stringify(res));
-			localStorage.setItem('loginToken', res.data.token);
-		}).catch((res) => {
-			// 실패했을 경우
-			console.error("실패 ", res);
-		});
 
+		console.log('registerClickFn ============ ');
+		navigate('/join');
+		// console.log('registerClickFn =========== ');
+		// axios.post("/api/register",
+		// 	{ 
+		// 		// user_id : inpID.current.value,
+		// 		// user_pw : inpPW.current.value,
+		// 		// 하드코딩 데이터
+		// 		user_id : 'hyunh84',
+		// 		user_pw : '1234'
+		// 	}, 
+		// 	 {header: {
+		// 		// "Context-Type": "multipart/form-data",
+		// 	},
+		// }).then((res) => {
+		// 	console.log('성공 ::: ' + JSON.stringify(res));
+		// 	localStorage.setItem('loginToken', res.data.token);
+		// }).catch((res) => {
+		// 	// 실패했을 경우
+		// 	console.error("실패 ", res);
+		// });
+
+		
 	};
 
 	const loginClickFn = (e)=>{
