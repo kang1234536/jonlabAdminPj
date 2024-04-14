@@ -9,9 +9,9 @@ import {
 
 import {GState} from './GState';
 
-import Main from 'page/Main';
-import Login from 'layout/Login';
 import Layout from 'layout/Layout';
+import Main from 'page/Main';
+import Login from 'page/mem/Login';
 
 import FormItem from 'guide/FormItem';
 import TableItem from 'guide/TableItem';

@@ -24,21 +24,19 @@ const Login = () => {
 				// user_id : inpID.current.value,
 				// user_pw : inpPW.current.value,
 				// 하드코딩 데이터
-				user_id : 'kha0202',
+				user_id : 'hyunh84',
 				user_pw : '1234'
 			}, 
 			 {header: {
-						// "Context-Type": "multipart/form-data",
-					},
-			}).then((res) => {
-									console.log('성공 ::: ' + JSON.stringify(res));
-									localStorage.setItem('loginToken', res.data.token);
-							}
-					).catch((res) => {
-						// 실패했을 경우
-						console.error("실패 ", res);
-						}
-					);
+				// "Context-Type": "multipart/form-data",
+			},
+		}).then((res) => {
+			console.log('성공 ::: ' + JSON.stringify(res));
+			localStorage.setItem('loginToken', res.data.token);
+		}).catch((res) => {
+			// 실패했을 경우
+			console.error("실패 ", res);
+		});
 
 	};
 
@@ -52,16 +50,14 @@ const Login = () => {
 				token   : localStorage.getItem('loginToken')
 			}, 
 			 {header: {
-						// "Context-Type": "multipart/form-data",
-					},
-			}).then((res) => {
-									loginChkFn(res.data);
-							}
-					).catch((res) => {
-						// 실패했을 경우
-						console.error("실패 ", res);
-						}
-					);
+				// "Context-Type": "multipart/form-data",
+			},
+		}).then((res) => {
+			loginChkFn(res.data);
+		}).catch((res) => {
+			// 실패했을 경우
+			console.error("실패 ", res);
+		});
 	};
 
 	function loginChkFn(data) {
