@@ -10,6 +10,7 @@ const Header = () => {
 	const logoutClickFn = (e)=>{
 		setLoginYn(false);
 		localStorage.setItem('logginYn', 'false');
+		localStorage.removeItem('loginToken');
 	}
 
 	return (

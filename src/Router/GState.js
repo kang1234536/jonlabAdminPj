@@ -8,7 +8,7 @@ export const GState = React.createContext(null);
 const GStateProvider = ({ children }) => {
 	const [pageRoot, setPageRoot] = useState('/');
 	const [loginYn, setLoginYn] = useState(localStorage.getItem('logginYn') === 'true' ? true : false);
-	
+
 
 	// axios post 사용법
 
