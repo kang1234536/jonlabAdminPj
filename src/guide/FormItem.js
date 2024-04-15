@@ -2,12 +2,9 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import PageTitle from 'comUI/page_title';
 import RegFoldItemBox from 'comUI/regist_folding_box';
-import Checkbox from 'comUI/form/checkbox';
-import Radiobox from 'comUI/form/radiobox';
+import CheckItem from 'comUI/form/checkitem';
+import RadioItem from 'comUI/form/radioitem';
 import RadioButtonBox from 'comUI/radiobuttonbox';
-// import InputTxt from 'ui_component/input_txt';
-// import InputNum from 'ui_component/input_num';
-import PeriodSett from 'comUI/period_setting';
 import Buttons from 'comUI/buttons/buttons';
 
 const FormItem = () => {
@@ -33,7 +30,7 @@ const FormItem = () => {
 	},[btnRadioState]);
 	
 	return (
-		<div className="contents">
+		<>
 			<PageTitle
 				title={'페이지 타이틀명'}
 				essential_title = {'필수 항목'}
@@ -50,26 +47,44 @@ const FormItem = () => {
 				// helpTip={true}
 			>
 				<div>
-					<p>높이 : 32px</p>
+					<p>tiny</p>
+					<br />
+					<Buttons name="btnTiny" txt="btnTiny button" clickCall={btnClickFn} />
+					&nbsp;
+					<Buttons name="btnTiny02" txt="btnTiny button" clickCall={btnClickFn} />
+					&nbsp;
+					<Buttons name="btnTiny03" txt="btnTiny button" clickCall={btnClickFn} />
+					<br />
+					<br />
+					
+					<p>높이 : 40px</p>
 					<br />
 					<Buttons name="btnItem" txt="btnItem button" clickCall={btnClickFn} />
+					<br />
 					<Buttons name="btnItem02" txt="btnItem02 button" clickCall={btnClickFn} />
+					<br />
 					<Buttons name="btnItem03" txt="btnItem03 button" clickCall={btnClickFn} />
 					
 					<br /><br />
 					<Link to="#" className="btnItem"><span>btnItem anchor</span></Link>
+					<br />
 					<Link to="#" className="btnItem02"><span>btnItem02 anchor</span></Link>
+					<br />
 					<Link to="#" className="btnItem03"><span>btnItem03 anchor</span></Link>
 					<br />
 					<br />
-					<p>높이 : 40px</p>
+					<p>높이 : 56px</p>
 					<br />
 					<button type="button" className="btnItemL"><span>btnItemL button</span></button>
+					<br />
 					<button type="button" className="btnItemL02"><span>btnItemL02 button</span></button>
+					<br />
 					<button type="button" className="btnItemL03"><span>btnItemL03 button</span></button>
 					<br /><br />
 					<Link to="#" className="btnItemL"><span>btnItemL anchor</span></Link>
+					<br />
 					<Link to="#" className="btnItemL02"><span>btnItemL02 anchor</span></Link>
+					<br />
 					<Link to="#" className="btnItemL03"><span>btnItemL03 anchor</span></Link>
 				</div>
 			</RegFoldItemBox>
@@ -78,36 +93,31 @@ const FormItem = () => {
 				title={'Check box style'}
 				// helpTip={true}
 			>
-				<Checkbox
-					objOpt={
-						[
-							{
-								'optName' : 'check Item Template1',
-								'value' : 'check01',
-								'checked' : true,
-
-							},
-							{
-								'optName' : 'check Item Template2',
-								'value' : 'check02',
-								// 'checked' : null,
-
-							},
-							{
-								'optName' : 'check Item Template3',
-								'value' : 'check03',
-								// 'checked' : null,
-
-							},
-							{
-								'optName' : 'check Item Template4',
-								'value' : 'check04',
-								'checked' : null,
-							},
-						]
-					}
-					checkIdx={1}
-					setState={setCheckState}
+				<CheckItem 
+					text = "check items01"
+					checked = {true}
+					changeCall = {(checkVal)=>{
+						console.log('change value ::::: check items01', checkVal);
+					}}
+				/>
+				<CheckItem 
+					text = "check items02"
+					changeCall = {(checkVal)=>{
+						console.log('change value ::::: check items02', checkVal);
+					}}
+				/>
+				<CheckItem 
+					text = "check items03"
+					changeCall = {(checkVal)=>{
+						console.log('change value ::::: check items03', checkVal);
+					}}
+				/>
+				<CheckItem 
+					text = "check items04"
+					changeCall = {(checkVal)=>{
+						console.log('change value ::::: check items04', checkVal);
+					}}
+					disabled = {true}
 				/>
 			</RegFoldItemBox>
 
@@ -115,37 +125,31 @@ const FormItem = () => {
 				title={'radio box style'}
 				// helpTip={true}
 			>
-				<Radiobox
-					objOpt={
-						[
-							{
-								'optName' : 'radio Item Template1',
-								'value' : 'radio01'
-
-							},
-							{
-								'optName' : 'radio Item Template2',
-								'value' : 'radio02'
-
-							},
-							{
-								'optName' : 'radio Item Template3',
-								'value' : 'radio03'
-
-							},
-							{
-								'optName' : 'radio Item Template4',
-								'value' : 'radio04'
-							},
-						]
-					}
-					groupName={'radio01'}
-					checkIdx={1}
-					setState={setRadioState}
+				<RadioItem 
+					text = "radio items01"
+					group = "rdoGroup01"
+					changeCall = {(val)=>{
+						console.log('change value ::::: radio items01', val);
+					}}
+				/>
+				<RadioItem 
+					text = "radio items02"
+					group = "rdoGroup01"
+					changeCall = {(val)=>{
+						console.log('change value ::::: radio items02', val);
+					}}
+				/>
+				<RadioItem 
+					text = "radio items03"
+					group = "rdoGroup01"
+					disabled = {true}
+					changeCall = {(val)=>{
+						console.log('change value ::::: radio items03', val);
+					}}
 				/>
 			</RegFoldItemBox>
-
-			<RegFoldItemBox
+				
+			{/* <RegFoldItemBox
 				title={'button radio box style'}
 				// helpTip={true}
 			>
@@ -167,50 +171,9 @@ const FormItem = () => {
 					setState={setBtnRadioState}
 				/>
 				
-			</RegFoldItemBox>
-
-			<RegFoldItemBox
-				title={'input text box style'}
-				// helpTip={true}
-			>
-				{/* <InputTxt
-					ver={'inptxtItem02'}
-					// minLeng={0}
-					// maxLeng={5}
-					/>
-
-				<br /><br />
-
-				<InputTxt
-					minLeng={0}
-					maxLeng={5}
-				/>
-
-				<br /><br />
-
-				<InputNum
-					unit={'원'}
-				/> */}
-			</RegFoldItemBox>
-
-			<RegFoldItemBox
-				title={'calendar style'}
-				// helpTip={true}
-			>
-				<PeriodSett
-					periodOpt={[3, 5, 7, 15, 30, 60, 90, 120]}
-					startDate={'2020-8-1'}
-					endDate={'2020-8-17'}
-				/>
-			</RegFoldItemBox>
-
-			{/* <RegFoldItemBox
-				title={'select style'}
-				// helpTip={true}
-			>
-				
 			</RegFoldItemBox> */}
-		</div>
+
+		</>
 	);
 }
 

@@ -15,7 +15,7 @@ const RegTemplate = () => {
 	}
 
 	return (
-		<div className="contents">
+		<>
 			<PageTitle
 				title={'페이지 타이틀명'}
 				essential_title = {'필수 항목'}
@@ -91,7 +91,7 @@ const RegTemplate = () => {
 				</div>
 			</div>
 
-		</div>
+		</>
 	);
 }
 

@@ -94,7 +94,7 @@ const Gnb = () => {
 							<button type="button" onClick={subDepthClick}>guide</button>
 							<div className="depth02">
 								<ul>
-									<li><Link to="register_template">register guide</Link></li>
+									{/* <li><Link to="register_template">register guide</Link></li> */}
 									<li><Link to="form_item">form item guide</Link></li>
 									<li><Link to="table_item">table item guide</Link></li>
 									<li><Link to="tab_item">tab item guide</Link></li>
