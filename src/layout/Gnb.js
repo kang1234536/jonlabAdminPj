@@ -95,10 +95,11 @@ const Gnb = () => {
 							<div className="depth02">
 								<ul>
 									{/* <li><Link to="register_template">register guide</Link></li> */}
-									<li><Link to="form_item">form item guide</Link></li>
-									<li><Link to="table_item">table item guide</Link></li>
-									<li><Link to="tab_item">tab item guide</Link></li>
-									<li><Link to="PopupSample01">popup guide</Link></li>
+									<li><Link to="form_item">input</Link></li>
+									<li><Link to="form_item">form</Link></li>
+									<li><Link to="table_item">table</Link></li>
+									<li><Link to="tab_item">tab</Link></li>
+									<li><Link to="PopupSample01">popup</Link></li>
 								</ul>
 							</div>
 						</li>

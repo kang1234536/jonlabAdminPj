@@ -5,7 +5,6 @@
 **************************************************************************************/
 /* button style */
 [class^="btnItem"], a[class^="btnItem"] {display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:100%;min-height:40px;padding:0 20px;font-size:14px;font-weight:700;color:#404040;border:1px solid #e6e6e6;border-radius:8px;background-color:#fff;}
-[class^="btnItem"]:focus {outline:2px solid #000;}
 [class^="btnItem"] span {display:inline-block;padding:2px 0 0;line-height:20px;}
 .btnItem02, a.btnItem02 {color:#fff;border:1px solid #6856F2;background-color:#6856F2}
 .btnItem03, a.btnItem03 {border:1px solid #F3F1FE;background-color:#F3F1FE}
@@ -15,7 +14,6 @@
 .btnItemL03, a.btnItemL03 {border:1px solid #F3F1FE;background-color:#F3F1FE}
 
 [class^="btnTiny"], a[class^="btnTiny"] {display:inline-block;box-sizing:border-box;min-height:24px;padding:0 8px;text-align:center;font-size:12px;font-weight:500;color:#404040;border:1px solid #e6e6e6;border-radius:8px;background-color:#fff;vertical-align:middle;}
-[class^="btnTiny"]:focus {outline:2px solid #000;}
 [class^="btnTiny"] span {display:block;padding:2px 0 0;line-height:18px;} 
 .btnTiny02, a.btnTiny02 {color:#fff;border:1px solid #6856F2;background-color:#6856F2}
 .btnTiny03, a.btnTiny03 {border:1px solid #F3F1FE;background-color:#F3F1FE}
