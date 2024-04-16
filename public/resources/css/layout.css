@@ -44,9 +44,3 @@
 .contents {padding:20px;}
 
 #footer {position:absolute;left:220px;right:0;bottom:0;padding:0 0 70px;line-height:60px;font-size:20px;font-weight:500;color:#fff;text-align:center;background-color:#000;transition:left .6s ease;}
-
-/**************************************************************************************
-** Login
-**************************************************************************************/
-#root.loginPage #container {padding:55px 0 0;transition:none;}
-#root.loginPage #footer {left:0;transition:none;}

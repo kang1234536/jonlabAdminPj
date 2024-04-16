@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 // import {QL_LOGIN} from "apollo/user/user";
 import {GState} from 'Router/GState';
 import Buttons from 'comUI/buttons/buttons';
+import Loading from 'comUI/loading/loading';
 
 const Login = () => {
 	const navigate = useNavigate();
 	const rootEl = document.querySelector('#root');
+	const [isLoginLoading, setIsLoginLoading] = useState(false);
 
 	let {setLoginYn} = useContext(GState);
 	let {client} = useContext(GState);
@@ -49,6 +51,7 @@ const Login = () => {
 	const loginClickFn = (e)=>{
 		console.log('loginClickFn =========== ');
 		
+		setIsLoginLoading(true);
 		axios.post("/api/login",
 			{ 
 				user_id : inpID.current.value,
@@ -60,15 +63,17 @@ const Login = () => {
 			},
 		}).then((res) => {
 			loginChkFn(res.data);
+			setIsLoginLoading(false);
 		}).catch((res) => {
 			// 실패했을 경우
 			console.error("실패 ", res);
+			setIsLoginLoading(false);
 		});
 	};
 
 	function loginChkFn(data) {
 		console.log(data.errMsg);
-		if (data.errMsg == null || data.errMsg == "") {
+		if (data.errMsg === null || data.errMsg === "") {
 			alert('성공');
 			setLoginYn(true);
 			localStorage.setItem('logginYn', 'true');
@@ -87,38 +92,40 @@ const Login = () => {
 		}
 
 	});
-	
+
 	return (
-		<div className="loginWrap">
+		<>
+			<div className="loginWrap">
 
-			<div className="loginBox">
-				<div className="rowCase">
-					<strong className="tit">ID</strong>
-					<div className="inpLogin">
-						<input type="text" title="아이디를 입력해주세요" ref={inpID}/>
-						{/* <input type="text" title="아이디를 입력해주세요" value={idValue} onChange={saveUserId}/> */}
+				<div className="loginBox">
+					<div className="rowCase">
+						<strong className="tit">ID</strong>
+						<div className="inpLogin">
+							<input type="text" title="아이디를 입력해주세요" ref={inpID}/>
+							{/* <input type="text" title="아이디를 입력해주세요" value={idValue} onChange={saveUserId}/> */}
+						</div>
+					</div>
+					
+					<div className="rowCase">
+						<strong className="tit">PW</strong>
+						<div className="inpLogin">
+							<input type="text" title="비밀번호를 입력해주세요" ref={inpPW}/>
+							{/* <input type="text" title="비밀번호를 입력해주세요" value={pwValue} onChange={saveUserPw}/> */}
+						</div>
 					</div>
 				</div>
-				
-				<div className="rowCase">
-					<strong className="tit">PW</strong>
-					<div className="inpLogin">
-						<input type="text" title="비밀번호를 입력해주세요" ref={inpPW}/>
-						{/* <input type="text" title="비밀번호를 입력해주세요" value={pwValue} onChange={saveUserPw}/> */}
-					</div>
+
+			</div>
+
+			<div className="fixedBtnBox">
+				<div className="boxR">
+					<Buttons name="btnItemL02" txt="로그인" clickCall={loginClickFn} />
+					<Buttons name="btnItemL" txt="회원가입" clickCall={registerClickFn} />
 				</div>
 			</div>
 
-			<div className="loginBtnBox">
-				<div>
-					<Buttons name="btnItemL02" txt="LOGIN" clickCall={loginClickFn} />
-				</div>
-				<div>
-					<Buttons name="btnItemL01" txt="REGISTER" clickCall={registerClickFn} />
-				</div>
-			</div>
-
-		</div>
+			{isLoginLoading && <Loading />}
+		</>
 	);
 }
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PageTitle = ({title, essential_title}) => {
+const PageTitle = ({classNm="pageTitleWrap", title, essential_title}) => {
 	return (
-		<div className="pageTitleWrap">
+		<div className={classNm}>
 			<h2 className="pageTitle">{title}</h2>
 			{essential_title && (
 				<span className="essential">{essential_title}</span>
@@ -15,6 +15,7 @@ const PageTitle = ({title, essential_title}) => {
 PageTitle.propTypes = {
 	essential_title : PropTypes.string,
 	title : PropTypes.string.isRequired,
+	classNm : PropTypes.string,
 }
 
 export default PageTitle;
