@@ -22,6 +22,7 @@
 #gnb .searchBox .srchItemWrap {margin:10px 0 0;}
 
 /* #gnb .gnbListBox {display:block;background} */
+#gnb a:focus, #gnb button:focus {outline:none;}
 #gnb .gnbListBox > ul {padding:15px 0;}
 #gnb .gnbListBox > ul > li {padding:0 25px;}
 #gnb .gnbListBox > ul > li > a,

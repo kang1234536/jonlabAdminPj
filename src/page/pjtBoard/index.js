@@ -2,7 +2,7 @@ import React, {} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 import Buttons from 'comUI/buttons/buttons';
-import InputTxt from 'comUI/inpTxt/inputTxt';
+import InputTxt from 'comUI/input/textbox';
 
 
 const PjtBoard = () => {

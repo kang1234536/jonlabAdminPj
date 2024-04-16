@@ -6,17 +6,17 @@
 /* button style */
 [class^="btnItem"], a[class^="btnItem"] {display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:100%;min-height:40px;padding:0 20px;font-size:14px;font-weight:700;color:#404040;border:1px solid #e6e6e6;border-radius:8px;background-color:#fff;}
 [class^="btnItem"] span {display:inline-block;padding:2px 0 0;line-height:20px;}
-.btnItem02, a.btnItem02 {color:#fff;border:1px solid #6856F2;background-color:#6856F2}
-.btnItem03, a.btnItem03 {border:1px solid #F3F1FE;background-color:#F3F1FE}
+.btnItem02, a.btnItem02 {color:#fff;border:1px solid #6856f2;background-color:#6856f2}
+.btnItem03, a.btnItem03 {border:1px solid #f3f1fe;background-color:#f3f1fe}
 
 [class^="btnItemL"], a[class^="btnItemL"] {min-height:56px;}
-.btnItemL02, a.btnItemL02 {color:#fff;border:1px solid #6856F2;background-color:#6856F2}
-.btnItemL03, a.btnItemL03 {border:1px solid #F3F1FE;background-color:#F3F1FE}
+.btnItemL02, a.btnItemL02 {color:#fff;border:1px solid #6856f2;background-color:#6856f2}
+.btnItemL03, a.btnItemL03 {border:1px solid #f3f1fe;background-color:#f3f1fe}
 
 [class^="btnTiny"], a[class^="btnTiny"] {display:inline-block;box-sizing:border-box;min-height:24px;padding:0 8px;text-align:center;font-size:12px;font-weight:500;color:#404040;border:1px solid #e6e6e6;border-radius:8px;background-color:#fff;vertical-align:middle;}
 [class^="btnTiny"] span {display:block;padding:2px 0 0;line-height:18px;} 
-.btnTiny02, a.btnTiny02 {color:#fff;border:1px solid #6856F2;background-color:#6856F2}
-.btnTiny03, a.btnTiny03 {border:1px solid #F3F1FE;background-color:#F3F1FE}
+.btnTiny02, a.btnTiny02 {color:#fff;border:1px solid #6856f2;background-color:#6856f2}
+.btnTiny03, a.btnTiny03 {border:1px solid #f3f1fe;background-color:#f3f1fe}
 
 
 /* ico fold buttons */
@@ -24,23 +24,11 @@
 [class^="btnFold"].active {background-position:center top;}
 
 /* input style */
-[class^="inptxtItem"] {display:inline-block;box-sizing:border-box;position:relative;padding:0;border:1px solid #dbdde2;}
-[class^="inptxtItem"] input[type="text"] {box-sizing:border-box;width:100%;height:32px;padding:0 10px;font-size:14px;border:none;outline:none;background-color:transparent;appearance:none;-webkit-appearance:none;}
-/* [class^="inptxtItem"] .limitLength {display:block;overflow:hidden;position:absolute;right:0;top:0;width:60px;padding:2px 5px 0;line-height:30px;font-size:10px;text-align:center;border-left:1px solid #dbdde2;}
-[class^="inptxtItem"] .limitLength em {display:inline-block;font-weight:500;color:#3772ea;vertical-align:top;}
-[class^="inptxtItem"] .limitLength span {display:inline-block;vertical-align:top;} */
-[class^="inptxtItem"].focus {background-color:#fff;}
-/* .inptxtItem02 {padding:0;} */
-/* .inptxtItem02 .limitLength {display:none;} */
-
-[class^="inpNumItem"] {display:inline-block;box-sizing:border-box;position:relative;padding:0 70px 0 0;border:1px solid #dbdde2;background-color:#efefef;}
-[class^="inpNumItem"] input[type="tel"],
-[class^="inpNumItem"] input[type="text"] {box-sizing:border-box;width:100%;height:32px;padding:0 10px;font-size:14px;text-align:right;border:none;outline:none;background-color:transparent;appearance:none;-webkit-appearance:none;}
-[class^="inpNumItem"] .unit {display:block;overflow:hidden;position:absolute;right:0;top:0;width:60px;padding:2px 5px 0;line-height:30px;font-size:12px;text-align:center;border-left:1px solid #dbdde2;}
-[class^="inpNumItem"].focus {background-color:#fff;}
-
-/* 가격 등록 박스 텍스트 */
-[class^="regUnitRow"] [class^="unitTxt"] {display:inline-block;margin:0 0 0 5px;}
+[class^="inpItem"] {display:block;box-sizing:border-box;position:relative;padding:0;border:2px solid #6856f2;border-radius:12px;}
+[class^="inpItem"] input {box-sizing:border-box;width:100%;height:36px;border:none;vertical-align:top;border-radius:10px;}
+[class^="inpItem"].disabled {border:2px solid #dbdee3;background-color:#dbdee3;}
+[class^="inpItem"].disabled input:disabled {background-color:#dbdee3;}
+[class^="inpItem"].readonly input:read-only {pointer-events:none;}
 
 /* design check box */
 [class^="chkItem"] {display:inline-block;position:relative;min-height:24px;margin:0 4px 0 0;vertical-align:middle;}
@@ -127,25 +115,6 @@
 [class^="pageTitleWrap"] .essential:after {display:block;content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:5px;background-color:#ff545c;}
 [class^="pageTitleWrap"] [class^="tooltipWrap"] {margin:0 0 0 5px;}
 
-/* period date set */
-[class^="periodWrap"] {display:inline-block;position:relative;padding:0 350px 0 0;}
-[class^="periodWrap"] .periodOpt button {position:relative;height:34px;padding:0 10px;margin:0 -1px 0 0;color:#666;border:1px solid #dbdde2;background-color:#fff;}
-[class^="periodWrap"] .periodOpt button.active {color:#fff;border:1px solid #3772ea;background-color:#3772ea;z-index:1;}
-[class^="periodWrap"] .periodFrom {position:absolute;right:0;top:0;}
-[class^="periodWrap"] .periodFrom:after {display:block;content:"";clear:both;overflow:hidden;width:0;height:0;line-height:0;}
-[class^="periodWrap"] .periodFrom > span {float:left;height:34px;line-height:34px;}
-[class^="periodWrap"] .periodFrom > span:nth-child(2) {padding:0 5px;}
-[class^="periodWrap"] .periodFrom > span .react-date-picker {line-height:32px;}
-
-/* tooltip guide style */
-[class^="tooltipWrap"] {display:inline-block;position:relative;line-height:0;vertical-align:2px;}
-[class^="tooltipWrap"] button {width:15px;height:15px;background:url('../images/ico_tip.png') no-repeat center;}
-[class^="tooltipWrap"] button em {display:block;overflow:hidden;width:0;height:0;line-height:0}
-[class^="tooltipWrap"] .tipCont {display:none;position:absolute;top:20px;left:-10px;width:500px;padding:20px;line-height:20px;border:1px solid #e3e7ee;background-color:#fff;}
-[class^="tooltipWrap"] .tipCont ul li {position:relative;margin:10px 0 0;padding:0 0 0 7px;line-height:20px;font-size:13px;font-weight:300;color:#767a83;word-break:keep-all;}
-[class^="tooltipWrap"] .tipCont ul li:first-child {margin:0;}
-[class^="tooltipWrap"] .tipCont ul li:before {display:block;content:"";position:absolute;left:0;top:6px;width:2px;height:2px;background-color:#767a83;}
-
 /* 입력 폴딩 박스 레이아웃 */
 [class^="regItemWrap"] {margin:20px 0 0;border:1px solid #dbdde2;background-color:#fff;}
 [class^="regItemWrap"] [class^="titBox"] {position:relative;padding:20px 60px 20px 20px;cursor:pointer;}
@@ -182,7 +151,6 @@
 [class^="tblWrap"] table tbody tr td {padding:10px;line-height:20px;font-size:12px;border:1px solid #dbdde2;}
 [class^="tblWrap"] table tbody tr td:first-child {border-left:none;}
 [class^="tblWrap"] table tbody tr td:last-child {border-right:none;}
-
 
 /* view and regist table */
 [class^="viewTblWrap"] {width:100%;}
@@ -283,5 +251,6 @@
 .loginWrap .loginBox .rowCase .inpLogin input {box-sizing:border-box;width:100%;height:50px;font-size:16px;border:1px solid #ccc;border-radius:12px;}
 
 .loginWrap .loginBtnBox {display:flex;margin:20px 0 0;}
-.loginWrap .loginBtnBox > div {width:100%;}
+.loginWrap .loginBtnBox > div {width:100%;margin-right:8px;}
+.loginWrap .loginBtnBox > div:last-child {margin-right:0;}
 .loginWrap .loginBtnBox > div button {width:100%;}

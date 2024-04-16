@@ -1,8 +1,6 @@
 import React, {useRef} from 'react';
 import PageTitle from 'comUI/page_title';
 import RegFoldItemBox from 'comUI/regist_folding_box';
-// import InputTxt from 'ui_component/input_default';
-// import InputNum from 'ui_component/input_num';
 import Selectbox02 from 'ui_component/selectbox02';
 import Buttons from 'comUI/buttons/buttons';
 

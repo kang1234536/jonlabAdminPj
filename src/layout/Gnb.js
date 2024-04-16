@@ -95,7 +95,7 @@ const Gnb = () => {
 							<div className="depth02">
 								<ul>
 									{/* <li><Link to="register_template">register guide</Link></li> */}
-									<li><Link to="form_item">input</Link></li>
+									<li><Link to="input_txt">input</Link></li>
 									<li><Link to="form_item">form</Link></li>
 									<li><Link to="table_item">table</Link></li>
 									<li><Link to="tab_item">tab</Link></li>
