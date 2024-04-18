@@ -13,6 +13,8 @@ import Layout from 'layout/Layout';
 import Main from 'page/Main';
 import Login from 'page/mem/Login';
 import Join from 'page/mem/Join';
+// Test 용도
+import Test from 'page/mem/Test';
 
 import InpTxt from 'guide/inpTxt';
 import FormItem from 'guide/FormItem';
@@ -49,6 +51,8 @@ const RouterSet = () => {
 					
 					<Route path="/login" element={!loginYn ? <Login /> : <Navigate to="/" replace />} />
 					<Route path="/join" element={loginYn ? <Navigate to="/" replace /> : <Join />} />
+					{/* 테스트용도  */}
+					<Route path="/Test" element={loginYn ? <Navigate to="/" replace /> : <Test />} />
 
 					<Route path="*" element={<Navigate to="/" replace />}  />
 				</Routes>

@@ -21,6 +21,11 @@ const Login = () => {
 	const inpID = useRef(null);
 	const inpPW = useRef(null);
 	
+	const testClickFn = (e) => {
+		console.log('testClickFn ============ ');
+		navigate('/Test');
+	};
+	
 	const registerClickFn = (e) => {
 
 		console.log('registerClickFn ============ ');
