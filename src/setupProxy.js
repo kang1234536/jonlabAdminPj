@@ -9,4 +9,13 @@ module.exports = function(app) {
       changeOrigin: true,
     })
   );
+
+  app.use(
+    '/api2',
+    createProxyMiddleware({
+      target: 'https://imgserver-ed26cbe59f77.herokuapp.com/',
+      // target: 'http://localhost:8080',
+      changeOrigin: true,
+    })
+  );
 };

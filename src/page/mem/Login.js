@@ -19,6 +19,11 @@ const Login = () => {
 	const inpID = useRef(null);
 	const inpPW = useRef(null);
 	
+	const testClickFn = (e) => {
+		console.log('testClickFn ============ ');
+		navigate('/Test');
+	};
+	
 	const registerClickFn = (e) => {
 
 		console.log('registerClickFn ============ ');
@@ -115,6 +120,9 @@ const Login = () => {
 				</div>
 				<div>
 					<Buttons name="btnItemL01" txt="REGISTER" clickCall={registerClickFn} />
+				</div>
+				<div>
+					<Buttons name="btnItemL01" txt="Test" clickCall={testClickFn} />
 				</div>
 			</div>
 
