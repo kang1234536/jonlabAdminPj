@@ -65,10 +65,10 @@ const Test = () => {
 			<div class="registWrap">
 				{/* test */}
 				<div>
-					테스트용도 <input type="file"  onChange={onChangeImage}/>
+					이미지 업로드[서버로] <input type="file"  onChange={onChangeImage}/>
 				</div>
 				<div>
-					이미지가져오기 <Buttons name="btnItemL02" txt="test" clickCall={getImage} />
+					이미지가져오기 <Buttons name="btnItemL02" txt="서버에있는 이미지 불러오기" clickCall={getImage} />
 				</div>
 
 			</div>
