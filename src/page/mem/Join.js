@@ -29,6 +29,7 @@ const Join = () => {
 		}).then((res) => {
 			console.log('회원가입 성공 ::: ' + JSON.stringify(res));
 			localStorage.setItem('loginToken', res.data.token);
+			alert('회원가입성공 로그인페이지로 넘어갑니다.')
 			navigate('/login');
 		}).catch((res) => {
 			// 실패했을 경우
