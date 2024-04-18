@@ -15,8 +15,8 @@ const Login = () => {
 	let {client} = useContext(GState);
 	let {axios} = useContext(GState);
 	 
-	console.log(setLoginYn);
-	console.log(client);
+	// console.log(setLoginYn);
+	// console.log(client);
 	
 	const inpID = useRef(null);
 	const inpPW = useRef(null);
@@ -27,30 +27,8 @@ const Login = () => {
 	};
 	
 	const registerClickFn = (e) => {
-
 		console.log('registerClickFn ============ ');
 		navigate('/join');
-		// console.log('registerClickFn =========== ');
-		// axios.post("/api/register",
-		// 	{ 
-		// 		// user_id : inpID.current.value,
-		// 		// user_pw : inpPW.current.value,
-		// 		// 하드코딩 데이터
-		// 		user_id : 'hyunh84',
-		// 		user_pw : '1234'
-		// 	}, 
-		// 	 {header: {
-		// 		// "Context-Type": "multipart/form-data",
-		// 	},
-		// }).then((res) => {
-		// 	console.log('성공 ::: ' + JSON.stringify(res));
-		// 	localStorage.setItem('loginToken', res.data.token);
-		// }).catch((res) => {
-		// 	// 실패했을 경우
-		// 	console.error("실패 ", res);
-		// });
-
-		
 	};
 
 	const loginClickFn = (e)=>{
@@ -77,8 +55,10 @@ const Login = () => {
 	};
 
 	function loginChkFn(data) {
+
 		console.log(data.errMsg);
-		if (data.errMsg === null || data.errMsg === "") {
+
+		if (data.errMsg === null || data.errMsg === "" || data.errMsg == undefined ) {
 			alert('성공');
 			setLoginYn(true);
 			localStorage.setItem('logginYn', 'true');

@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import {GState} from 'Router/GState';
 import PageTitle from 'comUI/page_title';
 import InputTxt from 'comUI/input/textbox';
 import Buttons from 'comUI/buttons/buttons';
@@ -9,17 +9,40 @@ const Join = () => {
 
 	const rootEl = document.querySelector('#root');
 
+	let {axios} = useContext(GState);
+
+	let userId = '';
+	let userPw = '';
+	
 	const navigate = useNavigate();
 
 	const userSaveFnc = ()=>{
 		console.log('save user info');
+		axios.post("/api/register",
+			{ 
+				user_id : userId,
+				user_pw : userPw,
+			}, 
+			 {header: {
+				// "Context-Type": "multipart/form-data",
+			},
+		}).then((res) => {
+			console.log('회원가입 성공 ::: ' + JSON.stringify(res));
+			localStorage.setItem('loginToken', res.data.token);
+			navigate('/login');
+		}).catch((res) => {
+			// 실패했을 경우
+			console.error("실패 ", res);
+		});
 	}
+
 	const cancelJoinFnc = ()=>{
 		console.log('cancel user info');
 		navigate('/login', {replace : true});
 	}
 
 	useEffect(() => {
+
 		if (!rootEl.classList.contains('memJoin')) rootEl.classList.add('memJoin');
 
 		return () => {
@@ -43,7 +66,7 @@ const Join = () => {
 						inpTitle = "아이디를 입력해주세요"
 						placeholder = "ID"
 						changeCall = {(val)=>{
-							console.log(val);
+							userId = val;
 						}}
 					/>
 				</div>
@@ -57,7 +80,7 @@ const Join = () => {
 						inpTitle = "비밀번호를 입력해주세요"
 						placeholder = "PW"
 						changeCall = {(val)=>{
-							console.log(val);
+							userPw = val;
 						}}
 					/>
 				</div>
