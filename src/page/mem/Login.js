@@ -12,11 +12,8 @@ const Login = () => {
 	const [isLoginLoading, setIsLoginLoading] = useState(false);
 
 	let {setLoginYn} = useContext(GState);
-	let {client} = useContext(GState);
 	let {axios} = useContext(GState);
 	 
-	// console.log(setLoginYn);
-	// console.log(client);
 	
 	const inpID = useRef(null);
 	const inpPW = useRef(null);
