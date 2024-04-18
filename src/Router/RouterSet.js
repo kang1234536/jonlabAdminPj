@@ -14,7 +14,7 @@ import Main from 'page/Main';
 import Login from 'page/mem/Login';
 import Join from 'page/mem/Join';
 // Test 용도
-import Test from 'page/mem/Test'; 
+import Test from 'page/mem/Test';
 
 import FormItem from 'guide/FormItem';
 import TableItem from 'guide/TableItem';

@@ -14,7 +14,7 @@ module.exports = function(app) {
     '/api2',
     createProxyMiddleware({
       target: 'https://imgserver-ed26cbe59f77.herokuapp.com/',
-      // target: 'http://localhost:8080', 
+      // target: 'http://localhost:8080',
       changeOrigin: true,
     })
   );

@@ -4,7 +4,7 @@ import Buttons from 'comUI/buttons/buttons';
 
 const Test = () => {
 
-	let {axios} = useContext(GState); 
+	let {axios} = useContext(GState);
 	const rootEl = document.querySelector('#root');
 	
 	const [imageURL, setImageURL] = useState(null);
