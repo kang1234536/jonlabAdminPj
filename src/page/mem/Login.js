@@ -22,7 +22,7 @@ const Login = () => {
 		console.log('testClickFn ============ ');
 		navigate('/Test');
 	};
-	
+
 	const registerClickFn = (e) => {
 		console.log('registerClickFn ============ ');
 		navigate('/join');

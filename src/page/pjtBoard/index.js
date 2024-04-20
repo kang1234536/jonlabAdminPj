@@ -106,7 +106,7 @@ const PjtBoard =  () => {
 					 {
 						board.map(function(val,idx){
 							return(
-										<tr key={idx}>
+										<tr key={idx} onClick={goDetailFn}>
 												<td>
 													{val.BNO}
 												</td>
