@@ -1,17 +1,37 @@
-import React, {} from 'react';
+import React, {useContext, useState, useCallback, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
-
+import {GState} from 'Router/GState';
 import Buttons from 'comUI/buttons/buttons';
 import InputTxt from 'comUI/input/textbox';
 
 
-const PjtBoard = () => {
+const PjtBoard =  () => {
 	let linkDetail = useNavigate();
+	const [board, setBoard]	= useState([]);
+	let {axios} = useContext(GState);
+	
 	const goDetailFn = ()=>{
 		linkDetail('/pjtBoard/detail');
 	}
- 
-  return (
+
+	useEffect(()=>{
+		console.log("rendering~")
+		axios.post("/api/getBoard",  
+		{},
+		{header: {
+			// 'Content-Type': 'multipart/form-data',  // 데이터 형식 지정
+		},
+		}).then((res) => {
+			console.log(res.data);
+			setBoard(res.data);
+		}).catch((res) => {
+			// 실패했을 경우
+			console.error("실패 ", res);
+		});
+
+	}, []);
+
+	return (
 	<>
 		<div className="srcInqhWrap">
 			<div className="srchInner">
@@ -81,14 +101,37 @@ const PjtBoard = () => {
 						<th>등록일</th>
 					</tr>
 				</thead>
+				{/* 게시판 DB 조회  */}
 				<tbody>
-					<tr onClick={goDetailFn}>
+					 {
+						board.map(function(val,idx){
+							return(
+										<tr key={idx}>
+												<td>
+													{val.BNO}
+												</td>
+												<td>
+													{val.company_name}
+												</td>
+												<td>
+													{val.project_name}
+												</td>
+												<td>
+													{val.regist_date}
+												</td>
+										</tr>
+									)
+							}
+						)
+					} 
+					{/* <tr onClick={goDetailFn}>
 						<td>1</td>
 						<td>BNK 부산은행</td>
 						<td>부산은행 사용자중심 모바일뱅킹 재구축</td>
 						<td>2023.03.31</td>
-					</tr>
+					</tr> */}
 				</tbody>
+
 			</table>
 		</div>
 	</>
