@@ -124,14 +124,7 @@ const PjtBoard =  () => {
 							}
 						)
 					} 
-					{/* <tr onClick={goDetailFn}>
-						<td>1</td>
-						<td>BNK 부산은행</td>
-						<td>부산은행 사용자중심 모바일뱅킹 재구축</td>
-						<td>2023.03.31</td>
-					</tr> */}
 				</tbody>
-
 			</table>
 		</div>
 	</>
